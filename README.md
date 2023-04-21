@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#">
-    <img src="public/images/logo.png" alt="Logo horrorNotice" height="100">
+    <img src="public/images/logo.png" alt="Logo horrorNotice" height="60">
   </a>
   <h1 align="center">Horror Notice</h1>
 
