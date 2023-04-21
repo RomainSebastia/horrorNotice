@@ -1,0 +1,20 @@
+{
+    "name": "kercode/film",
+    "description": "Film - Decouverte film - Kercode",
+    "autoload": {
+        "psr-4": {
+           "Movie\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Romain Sébastia",
+            "email": "romain.sebastia@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.0",
+        "vlucas/phpdotenv": "^5.4",
+        "filp/whoops": "^2.14"
+    }
+}

@@ -1,0 +1,2037 @@
+/* police pour la nav et le footer */
+@font-face {
+  font-family: "Creepster";
+  src: url("../fonts/creepster/Creepster-Regular.woff2") format("woff2"),
+    url("../fonts/creepster/Creepster-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* police pour les titres */
+
+@font-face {
+  font-family: "montserratregular";
+  src: url("../fonts/montserrat/montserrat-regular-webfont.woff2")
+      format("woff2"),
+    url("../fonts/montserrat/montserrat-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* taille de la police */
+body {
+  font-size: 16px;
+}
+
+/* tous les ul */
+ul {
+  list-style-type: none;
+}
+/* tous mes paragraphe */
+p,
+button {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* tous mes strong */
+strong {
+  font-weight: 900;
+}
+
+/* tous mes h1 h2 h3 */
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-family: "montserratregular", sans-serif;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+/* Variables */
+:root {
+  --textWhite: #fff;
+  --textBlack: #000000;
+  --buttonValid: #0f7714;
+  --hoverLien: #a90f0f;
+  --backgroundPage: #101010;
+  --buttonRed: #ff0000;
+  --buttonGreen: #32a822;
+}
+
+/* Container */
+
+/* Header */
+header {
+  width: 100%;
+  padding: 0 10px;
+  color: var(--textWhite);
+  background-image: linear-gradient(to bottom, #ff0000, #000000);
+}
+
+/*  header nav */
+
+header #navHeader {
+  display: flex;
+  align-items: center;
+}
+
+/* taille du logo header */
+header #logoHeader img {
+  height: 80px;
+}
+
+/* div ulMenuHeader */
+header #navHeader #ulMenuHeader {
+  display: flex;
+  width: 100%;
+}
+/*  ul */
+header #navHeader #ulMenu {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+/* styles de la nav ul li a */
+header #navHeader #ulMenu li a {
+  text-decoration: none;
+  color: var(--textWhite);
+  margin: 0 30px;
+  font-size: 1.1rem;
+  font-family: "Creepster", sans-serif;
+  transition: color 0.7s ease;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  -webkit-transition: color 0.7s ease;
+  -moz-transition: color 0.7s ease;
+  -ms-transition: color 0.7s ease;
+  -o-transition: color 0.7s ease;
+}
+
+header #navHeader #ulMenu li a:hover {
+  color: var(--hoverLien);
+}
+
+/* marge entre les boutons d'authentification */
+header #navHeader #buttonAuthentification button {
+  margin: 4px;
+}
+
+/* Style pour le bouton S'inscrire */
+header #navHeader #buttonRegistration,
+header #navHeader #buttonDeconnect {
+  background-color: var(--buttonRed);
+  color: var(--textWhite);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+header #navHeader #buttonRegistration:hover,
+header #navHeader #buttonDeconnect:hover {
+  background-color: var(--hoverLien);
+}
+
+/* Style pour le bouton Se connecter */
+header #navHeader #buttonConnect {
+  background-color: var(--buttonGreen);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+header #navHeader #buttonConnect:hover,
+header #navHeader #buttonProfile:hover {
+  background-color: var(--buttonValid);
+}
+
+/* bouton de profil visible lorsqu'il est connecté */
+header #navHeader #buttonProfile {
+  background-color: var(--buttonGreen);
+  color: var(--textWhite);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+/* menu burger en display none et le bouton croix egalement  */
+header #navHeader #burger {
+  display: none;
+}
+
+header #navHeader #close {
+  display: none;
+}
+
+/* id qui me permet de changer de photo aléatoirement tous les minutes */
+#background-header {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ----------------------------alert error ou validator----------------------------------------- */
+
+/* design des alertes */
+.alert {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 20%;
+  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  text-align: center;
+}
+/* l'alerte si tout est validé */
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+/* l'alerte si il y a une erreur */
+.alert-danger {
+  background-color: #ff0000;
+  color: var(--textWhite);
+  border-color: #c3e6cb;
+}
+
+/* Fin du Header */
+
+/* -----------------------------------------------home--------------------------------------------- */
+#home #mainTitreImg h1 {
+  font-size: 1.9rem;
+  color: var(--textBlack);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+/* taille SVG */
+#home #mainTitreImg img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: auto;
+}
+
+#home #mainTitreImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#home h2 {
+  text-align: center;
+  padding: 30px;
+}
+
+/* bloc list film */
+#home .movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding-top: 30px;
+}
+
+
+/* titre des films  */
+#home h3 {
+  color: var(--textBlack);
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+#home .movie-card p {
+  font-size: 0.8rem;
+  margin: 10px;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* bloc des cards */
+#home .movie-card {
+  width: 23%;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#home .movie-card a {
+  text-decoration: none;
+}
+
+/* hover de la cards */
+#home .movie-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* images des cards */
+#home .movie-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* button qui dirige vers la page details d'un films */
+#home .button-voir-plus {
+  background-color: #5cb85c;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* hover du bouton */
+#home .button-voir-plus:hover {
+  background-color: #4cae4c;
+}
+
+/* -------------------------------------------a propos------------------------------------------------ */
+
+#about {
+  background-color: var(--backgroundPage);
+  color: #fff;
+  padding: 40px;
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#about h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+#about p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-align: justify;
+}
+/* liens a pour la page about */
+#about a {
+  color: var(--buttonValid);
+  text-decoration: none;
+}
+
+/* hover de la page about */
+#about a:hover {
+  color: var(--hoverLien);
+}
+
+#about h4 {
+  text-align: center;
+  font-size: 1.2rem;
+}
+/* taille de l'image de chucky */
+#about img {
+  object-fit: cover;
+  max-width: 50%;
+  display: block;
+  margin: 20px auto;
+  height: auto;
+}
+
+/* la div en position relative */
+#aboutBlocImg {
+  position: relative;
+}
+/* fleche pour retourner a la liste des films */
+#backList {
+  position: absolute;
+  top: 50%;
+  right: 70px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+}
+
+/* -------------------------------------Profil------------------------------------------------------ */
+
+/* Profil */
+#profil {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#profil #sectionProfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+#profil #nameTitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#profil img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 60%;
+  margin-bottom: 20px;
+  -webkit-border-radius: 60%;
+  -moz-border-radius: 60%;
+  -ms-border-radius: 60%;
+  -o-border-radius: 60%;
+}
+
+#profil form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#profil form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#profil form input {
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#profil form button {
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#profil form button:hover {
+  background-color: #23d046;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+/* -------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------PAGE AJOUTER UN FILM------------------------------------------------------------------ */
+
+#backgroundAdd {
+  font-family: Arial, sans-serif;
+  background-image: url("../images/skull-and-crossbones-g718cea64e_1920.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+#textBeforeAddingFilm {
+  text-align: justify;
+  margin: auto;
+}
+
+#textBeforeAddingFilm h2 {
+  margin-top: 20px;
+  font-family: "Creepster", sans-serif;
+  font-size: 2rem;
+  color: var(--textWhite);
+  text-shadow: 2px 2px 0 #000;
+  text-align: center;
+}
+
+#textBeforeAddingFilm p {
+  font-family: "Eater", sans-serif;
+  font-size: 0.8rem;
+  color: var(--textWhite);
+  text-shadow: 1px 1px 0 #000;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+/* Styles pour la carte */
+#blockAddAFilm {
+  background-color: var(--textWhite);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* Styles pour le formulaire */
+#blockAddAFilm form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#blockAddAFilm form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* resize le textarea */
+
+#description {
+  resize: none;
+}
+
+#blockAddAFilm form input[type="submit"] {
+  display: block;
+  background-color: #e80a0a;
+  color: var(--textWhite);
+  font-size: 1.1rem;
+  padding: 8px 32px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#blockAddAFilm form input[type="submit"]:hover {
+  background-color: var(--buttonValid);
+}
+
+/* ----page modifier un film */
+
+#backgroundAdd {
+  font-family: Arial, sans-serif;
+  background-image: url("../images/skull-and-crossbones-g718cea64e_1920.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+#textBeforeAddingFilm {
+  text-align: justify;
+  margin: auto;
+}
+
+#textBeforeAddingFilm h2 {
+  margin-top: 20px;
+  font-family: "Creepster", sans-serif;
+  font-size: 2rem;
+  color: var(--textWhite);
+  text-shadow: 2px 2px 0 #000;
+  text-align: center;
+}
+
+#textBeforeAddingFilm p {
+  font-family: "Eater", sans-serif;
+  font-size: 0.8rem;
+  color: var(--textWhite);
+  text-shadow: 1px 1px 0 #000;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+/* Styles pour la carte */
+#blockAddAFilm {
+  background-color: var(--textWhite);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* Styles pour le formulaire */
+#blockAddAFilm form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#blockAddAFilm form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* resize le textarea */
+
+#description {
+  resize: none;
+}
+
+#blockAddAFilm form input[type="submit"] {
+  display: block;
+  background-color: #e80a0a;
+  color: var(--textWhite);
+  font-size: 1.1rem;
+  padding: 8px 32px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#blockAddAFilm form input[type="submit"]:hover {
+  background-color: var(--buttonValid);
+}
+
+/* ----page modifier un film ------- */
+
+#textBeforeAddingFilm {
+  text-align: justify;
+  margin: auto;
+}
+
+#textBeforeAddingFilm h2 {
+  margin-top: 20px;
+  font-family: "Creepster", sans-serif;
+  font-size: 2rem;
+  color: var(--textWhite);
+  text-shadow: 2px 2px 0 #000;
+  text-align: center;
+}
+
+#textBeforeAddingFilm p {
+  font-family: "Eater", sans-serif;
+  font-size: 0.8rem;
+  color: var(--textWhite);
+  text-shadow: 1px 1px 0 #000;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+/* Styles pour la carte */
+#blockAddAFilm {
+  background-color: var(--textWhite);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* Styles pour le formulaire */
+#blockAddAFilm form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#blockAddAFilm form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* resize le textarea */
+
+#description {
+  resize: none;
+}
+
+#blockAddAFilm form input[type="submit"] {
+  display: block;
+  background-color: #e80a0a;
+  color: var(--textWhite);
+  font-size: 1.1rem;
+  padding: 8px 32px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#blockAddAFilm form input[type="submit"]:hover {
+  background-color: var(--buttonValid);
+}
+
+/* ----page modifier un film */
+
+#backgroundAdd {
+  font-family: Arial, sans-serif;
+  background-image: url("../images/skull-and-crossbones-g718cea64e_1920.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+#textBeforeAddingFilm {
+  text-align: justify;
+  margin: auto;
+}
+
+#textBeforeAddingFilm h2 {
+  margin-top: 20px;
+  font-family: "Creepster", sans-serif;
+  font-size: 2rem;
+  color: var(--textWhite);
+  text-shadow: 2px 2px 0 #000;
+  text-align: center;
+}
+
+#textBeforeAddingFilm p {
+  font-family: "Eater", sans-serif;
+  font-size: 0.8rem;
+  color: var(--textWhite);
+  text-shadow: 1px 1px 0 #000;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+/* Styles pour la carte */
+#blockAddAFilm {
+  background-color: var(--textWhite);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* Styles pour le formulaire */
+#blockAddAFilm form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#blockAddAFilm form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* resize le textarea */
+
+#description {
+  resize: none;
+}
+
+#blockAddAFilm form input[type="submit"] {
+  display: block;
+  background-color: #e80a0a;
+  color: var(--textWhite);
+  font-size: 1.1rem;
+  padding: 8px 32px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#blockAddAFilm form input[type="submit"]:hover {
+  background-color: var(--buttonValid);
+}
+
+/* ------------------------PAGE MENTIONS LEGALS ----------------------------------------------------------- */
+
+#blocMention {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+#blocMention h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#blocMention h3 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#blocMention p {
+  margin-bottom: 15px;
+}
+
+#blocMention a {
+  color: dimgray;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#blocMention a:hover {
+  color: var(--hoverLien);
+}
+
+/* --------------------page RGPD--------------------------- */
+
+#blocRGPD {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+#blocRGPD h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#blocRGPD h3 {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#blocRGPD p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#blocRGPD ul {
+  list-style: disc;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+#blocRGPD a {
+  color: #990000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#blocRGPD a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------page inscription------------------- */
+
+/* Couleur de fond du conteneur principal */
+#pageInscription {
+  background-color: var(--backgroundPage);
+}
+
+/* Section formulaire */
+#pageInscription section {
+  padding: 40px 0 30px 0;
+}
+
+/* Formulaire inscription */
+#pageInscription form {
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: var(--textWhite);
+  padding-bottom: 10px;
+}
+
+/* Titre du formulaire inscription */
+#titreRegister {
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Labels */
+#pageInscription label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#pageInscription label a {
+  text-transform: uppercase;
+  color: red;
+}
+
+#pageInscription label a:hover {
+  color: var(--buttonValid);
+}
+
+/* Inputs */
+#pageInscription input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* bloc page Login */
+#pageInscription #pageLogin {
+  margin-top: 20px;
+}
+
+#pageInscription #pageLogin p {
+  margin-bottom: 30px;
+}
+
+#pageInscription #pageLogin a {
+  color: var(--hoverLien);
+}
+
+#pageInscription #pageLogin a:hover {
+  color: var(--buttonValid);
+}
+
+/* Button inscription */
+#pageInscription button[type="submit"] {
+  background-color: var(--hoverLien);
+  color: #fff;
+  font-size: 1rem;
+  font-family: var(--buttonFamily);
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+#pageInscription button[type="submit"]:hover {
+  background-color: var(--buttonValid);
+}
+
+/* image après formulaire d'inscription avec une petite animation avec l'opacity */
+
+#imgRegister {
+  margin-top: 30px;
+  width: 100%;
+  height: 600px;
+  animation: imgAnimation 8s infinite alternate ease-in-out;
+  -webkit-animation: imgAnimation 8s infinite alternate ease-in-out;
+}
+
+@keyframes imgAnimation {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ------------------Page connexion----------------------------- */
+#pageConnection {
+  background-color: var(--backgroundPage);
+}
+
+/* Section formulaire */
+#pageConnection section {
+  padding: 30px 0 30px 0;
+}
+
+/* Formulaire inscription */
+#pageConnection form {
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: var(--textWhite);
+}
+
+/* Titre du formulaire */
+#titreConnection {
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Labels */
+#pageConnection label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#pageConnectionlabel a {
+  text-transform: uppercase;
+  color: red;
+}
+
+#pageConnection label a:hover {
+  color: var(--buttonValid);
+}
+
+/* Inputs */
+#pageConnection input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* bloc page Login */
+#pageConnection #pageLogin {
+  margin-top: 20px;
+}
+
+#pageConnection #pageLogin p {
+  margin-bottom: 30px;
+}
+
+#pageConnection #pageLogin a {
+  color: var(--hoverLien);
+}
+
+#pageConnection #pageLogin a:hover {
+  color: var(--buttonValid);
+}
+
+/* Button inscription */
+#pageConnection button[type="submit"] {
+  background-color: var(--hoverLien);
+  color: #fff;
+  font-size: 1rem;
+  font-family: var(--buttonFamily);
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+#pageConnection button[type="submit"]:hover {
+  background-color: var(--buttonValid);
+}
+/* /* image après formulaire de connexion + animation connexion */
+#imgLogin {
+  margin-top: 30px;
+  width: 100%;
+  height: 600px;
+  animation: imgAnimation 6s infinite alternate ease-in-out;
+  -webkit-animation: imgAnimation 6s infinite alternate ease-in-out;
+}
+
+@keyframes imgAnimation {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* ---------------------------page contact---------------------------- */
+#pageContact {
+  background-color: var(--backgroundPage);
+  padding-top: 20px;
+}
+
+/* div des paragraphes */
+
+#blocContactParagraph {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#pageContact p {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* mettre une marge sur le deuxieme paragraphe */
+#pageContact p:first-of-type {
+  margin-bottom: 20px;
+}
+
+/* image de la page contact */
+
+#pageContact img {
+  max-width: 50%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 15px;
+  padding-top: 20px;
+}
+
+/* Section formulaire */
+#pageContact section {
+  padding: 10px 0 30px 0;
+}
+
+/* Formulaire contact */
+#pageContact form {
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: var(--textWhite);
+  margin-top: 30px;
+}
+
+/* Titre du formulaire */
+h2#titleContact {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+#pageContact label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Inputs et textarea */
+#pageContact input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+#pageContact textarea {
+  height: 200px;
+  resize: none;
+}
+
+/* Button envoi */
+#pageContact button[type="submit"] {
+  background-color: var(--hoverLien);
+  color: #fff;
+  font-size: 1rem;
+  font-family: var(--buttonFamily);
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+#pageContact button[type="submit"]:hover {
+  background-color: var(--buttonValid);
+}
+
+/* -----------------------------page list.php------------------------------------ */
+
+/* -----------------------page list.php------------------------------ */
+
+/* bloc list film */
+#listMovie .movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding-top: 30px;
+}
+
+#titleList {
+  margin-top: 10px;
+  border-bottom: 2px solid #333;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* titre des films  */
+#listMovie h3 {
+  color: var(--textBlack);
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+#listMovie .movie-card p {
+  font-size: 0.8rem;
+  margin: 10px;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* bloc des cards */
+#listMovie .movie-card {
+  width: 23%;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#listMovie .movie-card a {
+  text-decoration: none;
+}
+
+/* hover de la cards */
+#listMovie .movie-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* images des cards */
+#listMovie .movie-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+#listMovie .list-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* button qui dirige vers la page details d'un films */
+#listMovie .list-button .button-voir-plus {
+  background-color: #5cb85c;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* hover du bouton */
+#listMovie .list-button .button-voir-plus:hover {
+  background-color: #4cae4c;
+}
+
+#listMovie form {
+  width:45%;
+  display: flex;
+  justify-content: end;
+}
+
+#listMovie .list-button form .button-like {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 10px;
+  border: none;
+  background-color: #5cb85c;
+  color: #f8f9fa;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+#listMovie .list-button form .button-like:hover {
+  cursor: pointer;
+  background-color: #4cae4c;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+#listMovie .list-button form .button-dislike {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 10px;
+  border: none;
+  background-color: gold;
+  color: #f8f9fa;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+#listMovie .list-button form .button-dislike:hover {
+  cursor: pointer;
+  background-color: goldenrod;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+/* page details d'un film */
+
+#movieDetails {
+  background-color: #f8f9fa;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+#movieDetails #movieDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+#movieDetails #movieTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #9f3838;
+  margin-bottom: 1rem;
+}
+
+#movieDetails #movieImageContainer {
+  max-width: 300px;
+  margin: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#movieDetails #movieImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#movieDetails #movieDetailsContent {
+  margin: 1rem;
+  box-sizing: border-box;
+}
+
+#movieDetails #movieDetailsContent p {
+  font-size: 1rem;
+  color: #f84d4d;
+  margin-bottom: 10px;
+  overflow: hidden;
+  width: 100%;
+  text-align: justify;
+}
+
+#movieDetails #movieDetailsContent p strong {
+  color: #2c3e50;
+}
+
+/* Styles pour la section des commentaires */
+#movieDetails #userComments {
+  margin-top: 20px;
+}
+#movieDetails .comment {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#movieDetails .commentAuthor {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#movieDetails .commentText {
+  margin: 0;
+}
+
+/* Styles pour le formulaire de soumission des commentaires */
+#movieDetails #submitComment {
+  margin-top: 20px;
+}
+#movieDetails form label {
+  display: block;
+  margin-bottom: 5px;
+}
+#movieDetails form textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+#movieDetails form button {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.full-description {
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ccc;
+  text-align: justify;
+}
+
+/* --------------------------------------------------------------------page error 404----------------------------------------------- */
+
+#error404 {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#error404 #pageError404 {
+  text-align: center;
+}
+
+#error404 #imgError404 {
+  width: 100%;
+  max-width: 600px;
+}
+
+#error404 p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+#error404 a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#error404 a:hover {
+  color: var(--hoverLien);
+}
+
+/* ------------------Footer------------------------ */
+
+/* Styles pour le footer */
+footer {
+  background-image: linear-gradient(to top, #ff0000, #000000);
+  color: var(--textWhite);
+  padding: 0 10px;
+  width: 100%;
+}
+
+/* logo footer */
+
+footer #logoFooter #imgLogoFooter {
+  height: 80px;
+  margin-right: 20px;
+}
+
+/* bloc qui englobe le logo et le menu footer */
+
+footer #blocFooter {
+  display: flex;
+  width: 100%;
+}
+/* menu footer  */
+
+footer #footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/*  menu footer a */
+footer #footerLinks a {
+  text-decoration: none;
+  color: var(--textWhite);
+  margin: 0 30px;
+  font-size: 1.1rem;
+  font-family: "Creepster", sans-serif;
+  transition: color 0.7s ease;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  -webkit-transition: color 0.7s ease;
+  -moz-transition: color 0.7s ease;
+  -ms-transition: color 0.7s ease;
+  -o-transition: color 0.7s ease;
+}
+
+/* hover du menu  */
+
+footer #footerLinks a:hover {
+  color: var(--hoverLien);
+}
+/* paragraphe de fin  */
+
+footer #footerCopyright {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--textBlack);
+}
+
+/* Fin du footer */
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------HEADER HORROR NOTICE RESPONSIVE---------------------------------------------------------------- */
+
+/* Pour les ecrans entre 320px et 1200px j'active le menu burger  */
+@media (min-width: 200px) and (max-width: 1200px) {
+  header #navHeader #burger {
+    display: initial;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  header #navHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header #navHeader #burger i {
+    font-size: 2.2rem;
+  }
+
+  header #navHeader #ulMenuHeader {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(25, 25, 25);
+    overflow-x: hidden;
+    transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.6s ease-in-out, visibility 0s linear 0.6s,
+      opacity 0.6s ease-in-out;
+    -webkit-transition: transform 0.6s ease-in-out, visibility 0s linear 0.6s,
+      opacity 0.6s ease-in-out;
+    -moz-transition: transform 0.6s ease-in-out, visibility 0s linear 0.6s,
+      opacity 0.6s ease-in-out;
+    -ms-transition: transform 0.6s ease-in-out, visibility 0s linear 0.6s,
+      opacity 0.6s ease-in-out;
+    -o-transition: transform 0.6s ease-in-out, visibility 0s linear 0.6s,
+      opacity 0.6s ease-in-out;
+  }
+
+  header #navHeader #ulMenuHeader.open {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.6s ease-in-out, visibility 0s linear 0s,
+      opacity 0.6s ease-in-out;
+    -webkit-transition: transform 0.6s ease-in-out, visibility 0s linear 0s,
+      opacity 0.6s ease-in-out;
+    -moz-transition: transform 0.6s ease-in-out, visibility 0s linear 0s,
+      opacity 0.6s ease-in-out;
+    -ms-transition: transform 0.6s ease-in-out, visibility 0s linear 0s,
+      opacity 0.6s ease-in-out;
+    -o-transition: transform 0.6s ease-in-out, visibility 0s linear 0s,
+      opacity 0.6s ease-in-out;
+  }
+
+  header #navHeader #close {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    cursor: pointer;
+  }
+
+  header #navHeader #close i {
+    font-size: 2.2rem;
+    margin: 10px;
+  }
+
+  header #navHeader #ulMenu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+
+  header #navHeader #ulMenu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  header #navHeader #ulMenu li a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  header #navHeader #buttonAuthentification {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  /* -----------------page home--------------------- */
+  #home #mainTitreSVG h1 {
+    font-size: 1.3rem;
+  }
+  #home h2 {
+    font-size: 1.1rem;
+  }
+ 
+
+  /* ----page about---- */
+  #about img {
+    max-width: 80%;
+  }
+
+  /* fleche pour retourner a la liste des films */
+
+  #backList {
+    position: static;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+  }
+
+  /* -------------------------------------page list.php----------------------------------- */
+
+  .movie-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+
+  /* bloc list film */
+
+  .movie-card {
+    width: 60%;
+    margin-left: 0;
+  }
+
+  #titleList {
+    text-align: center;
+    border-bottom: 2px solid #333;
+  }
+
+  /* page contact */
+
+  #blocContactParagraph {
+    width: 90%;
+  }
+
+  #pageContact img {
+    width: 90%;
+  }
+
+  /* page list film */
+  #listMovie .movie-card {
+    width: 48%; /* Réduction de la largeur */
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* page details du film */
+
+#movieDetails {
+  max-width: 80%;
+}
+
+/* pour les écrans jusqu'à 768px (tablettes) */
+
+@media (max-width: 768px) {
+  /* -----------------------home------------------------------ */
+  #home #mainTitreImg h1 {
+    font-size: 1.1rem;
+  }
+  #home #mainTitreImg {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #home h2 {
+    font-size: 1rem;
+  }
+
+  /* -------a propos-------------- */
+
+  #about h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  #about h3 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  #about p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  /* /* taille de l'image de chucky */
+
+  #about img {
+    width: 100%;
+  }
+
+  /* fleche pour retourner a la liste des films */
+
+  #backList {
+    position: static;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer #logoFooter #imgLogoFooter {
+    border-top: 1px solid black;
+    margin: auto;
+    display: flex;
+  }
+  footer #blocFooter {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  footer #footerLinks {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  footer #footerLinks a {
+    padding: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  footer #footerCopyright {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  /* page inscription */
+
+  /* formulaire inscription */
+
+  #pageInscription form {
+    max-width: 350px;
+  }
+
+  /* section formulaire */
+
+  #pageInscription section {
+    padding: 30px 0 30px 0;
+  }
+
+  /* page connexion */
+
+  #pageConnexion form {
+    max-width: 350px;
+  }
+
+  #pageConnexion section {
+    padding: 30px 0 30px 0;
+  }
+
+  /* page mentions legals  */
+
+  #blocMention {
+    padding: 20px;
+    max-width: 90%;
+  }
+  #blocMention h2 {
+    font-size: 1.8rem;
+  }
+  #blocMention h3 {
+    font-size: 1.3rem;
+  }
+  #blocMention p {
+    font-size: 1rem;
+  }
+
+  /* rgpd */
+
+  #blocRGPD {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  #blocRGPD h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  #blocRGPD h3 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  #blocRGPD p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  #blocRGPD ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+
+  #blocRGPD a {
+    font-size: 1rem;
+  }
+
+  .movie-cards {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  /* bloc list film */
+
+  .movie-card {
+    width: 90%; /* Ajuster la largeur des cartes pour qu'elles occupent la plupart de l'écran */
+    margin: 10px auto;
+  }
+
+  /* page contact */
+
+  #pageContact form {
+    max-width: 400px;
+  }
+
+  #profil img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+/*  pour les écrans jusqu'à 480px (petits téléphones) */
+@media (max-width: 480px) {
+  /* ----home---- */
+  #home #mainTitreSVG {
+    padding: 10px;
+  }
+  #home #mainTitreSVG h1 {
+    font-size: 0.8rem;
+  }
+  #home h2 {
+    font-size: 0.8rem;
+    padding: 0px;
+  }
+
+  /* ----a propos---- */
+
+  #about h2 {
+    font-size: 0.8rem;
+  }
+  #about p {
+    font-size: 0.6rem;
+  }
+  #about h4 {
+    font-size: 0.7rem;
+  }
+ 
+
+  /* /* taille de l'image de chucky */
+ 
+
+  
+
+  /* fleche pour retourner a la liste des films */
+
+ 
+
+  /* page inscription */
+
+  /* formulaire inscription */
+
+  #pageInscription form {
+    max-width: 280px;
+  }
+
+  #pageConnection form {
+    max-width: 280px;
+  }
+
+  /* page contact */
+
+  #pageContact form {
+    max-width: 300px;
+  }
+}

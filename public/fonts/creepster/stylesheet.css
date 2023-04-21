@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Creepster';
+    src: url('Creepster-Regular.woff2') format('woff2'),
+        url('Creepster-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
