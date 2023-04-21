@@ -7,6 +7,6 @@
   <p align="center">Films d'horreur - Projet Kercode</p>
 </div>
  <li>
- <a href="#description">Descriptio horrorNotice</a>
+ <a href="#description">Description horrorNotice</a>
 
 ...en cours
