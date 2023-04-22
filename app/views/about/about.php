@@ -1,7 +1,7 @@
-<?php $pageName = "A Propos"; ?>
 <?php include "app/views/layouts/head.php" ?>
 <?php include "app/views/layouts/header.php" ?>
 
+<!-- main a propos -->
 <main id="about">
   <section>
     <h2>À propos d'Horror Notice</h2>
@@ -13,13 +13,14 @@
     <h3>Qui sommes-nous ?</h3>
     <p>Nous sommes une équipe de fans de <strong>films d'horreur</strong> qui avons créé ce site pour partager notre passion avec d'autres fans. Nous espérons que vous apprécierez le site et que vous y trouverez des <strong>films</strong> qui vous plairont.</p>
     <h3>Contactez-nous</h3>
-    <p>Si vous avez des questions, des suggestions ou des commentaires, n'hésitez pas à nous contacter à l'adresse suivante : contact@horrornotice.com ou sur la page <a href="index.php?action=contact">Contact</a>.</p>
-    <h4>Venez nombreux Chucky vous attends</h4>
+    <p>Si vous avez des questions, des suggestions ou des commentaires, n'hésitez pas à nous contacter à l'adresse suivante : contact@horrornotice.com ou sur la page <a href="index.php?action=contact"> Contact</a> .</p>
+    <h3>Venez nombreux Chucky vous attends</h3>
     <!-- image de chucky -->
     <div id ="aboutBlocImg">
       <!-- image de chucky -->
       <img src="public/images/chucky.jpg" alt="chucky" id="about">
-      <a href="index.php?action=list" id="backList">
+      <a href="index.php?action=list" id="backList" title="pageList">
+        <!-- fleche changement de page -->
         <i class="fas fa-arrow-left"></i> Visité notre liste de films
       </a>
     </div>

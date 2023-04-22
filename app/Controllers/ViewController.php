@@ -159,8 +159,6 @@ class ViewController
     public function list()
     {
         $pageName = "Liste de nos films";
-        // On initialise un tableau vide pour stocker les films avec les likes
-        $moviesLikeAll = [];
 
         // On récupère tous les films
         $movies = $this->movieController->getAllMovies();
@@ -170,20 +168,17 @@ class ViewController
             $user_id = $_SESSION['user']['id'];
 
             // Pour chaque film, on vérifie si l'utilisateur a aimé le film
-            foreach ($movies as $movie) {
+            foreach ($movies as &$movie) {
                 $movie_id = $movie['id'];
                 $like = $this->likeController->read($user_id, $movie_id);
                 $movie['like_by_user'] = !empty($like);
-                $moviesLikeAll[] = $movie;
             }
-
-            // On remplace le tableau des films sans like par celui avec like
-            $movies = $moviesLikeAll;
         }
 
         // On affiche la liste des films
         require('app/views/movie/list.php');
     }
+
 
     // Page d'inscription
     public function register()
@@ -356,11 +351,18 @@ class ViewController
     public function favoris()
     {
         $pageName = "Favoris";
+        // Récupérer l'ID de l'utilisateur à partir de la session
+        $userId = $_SESSION['user']['id'];
+
+        // Obtenir les informations de l'utilisateur en utilisant l'ID stocké dans $userId
+        $user = $this->userController->getUserById($userId);
+        $username = $user['name'];
         // Vérifie si l'utilisateur est connecté
         if (!$this->isLoggedIn) {
             header('Location: /horrorNotice/index.php?action=home');
         }
-        $pageName = 'favoris';
+
+
         // les likes de l'utilisateur s'afficheront sur la page favoris
         $likedMovies = $this->likeController->getAllByUserId($_SESSION['user']['id']);
         require('app/views/movie/favoris.php');

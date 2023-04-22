@@ -79,7 +79,12 @@ class Like extends Manager
     public function readAllLikeByUserId(int $id_users)
     {
         try {
-            $query = 'SELECT movie.id, movie.title, movie.description, movie.release_date FROM movie AS movie INNER JOIN likes ON movie.id = likes.id_movie WHERE likes.id_users = :id_users';
+            $query = 'SELECT movie.id, movie.title, movie.description, movie.release_date, movie.image_url
+            FROM movie
+            INNER JOIN likes ON movie.id = likes.id_movie
+            WHERE likes.id_users = :id_users';
+            
+            
             $params = [
                 ':id_users' => $id_users,
             ];

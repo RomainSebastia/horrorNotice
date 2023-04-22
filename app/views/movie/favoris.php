@@ -1,20 +1,30 @@
-<?php require_once("app/views/layouts/head.php") ?>
-<?php include_once("app/views/layouts/header.php") ?>
+<?php include("app/views/layouts/head.php") ?>
+<?php include("app/views/layouts/header.php") ?>
 
 <!-- afficher le titre de la page -->
-<h1>Films aimés</h1>
+
 
 <!-- afficher les films aimés par l'utilisateur -->
-<ul>
-   
-    <?php foreach ($likedMovies as $movie): ?>
-        <li>
-            <h2><?php echo $movie['title']; ?></h2>
-            <p><?php echo $movie['description']; ?></p>
-            <!-- inclure un lien vers la page de détails du film -->
-            <a href="index.php?action=details&id=<?php echo $movie['id']; ?>">Voir plus de détails</a>
-        </li>
-    <?php endforeach; ?>
-</ul>
+<main id="favoris">
+    <h2>Films aimés de <?= $username ?> </h2>
+    <section class="movieCardsHome">
+        <?php foreach ($likedMovies as $movie) : ?>
+            <article class="movieCardHome">
+                <a href="/horrorNotice/index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
+              
+                <figure class="movieCardImgHome">
+                    <img src="<?= htmlspecialchars($movie['image_url']) ?>" alt="<?= htmlspecialchars($movie['title'] . ' - affiche du film') ?>">
+                </figure>
+                <h2><?= $movie['title'] ?></h2>
+                <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 20)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
+                <!-- inclure un lien vers la page de détails du film -->
+                <button class="buttonMovie">Voir plus</button>
 
-<?php require_once "app/views/layouts/footer.php"; ?>
+            </article>
+            </a>
+        <?php endforeach; ?>
+    </section>
+</main>
+
+
+<?php include "app/views/layouts/footer.php"; ?>

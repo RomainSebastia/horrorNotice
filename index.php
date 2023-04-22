@@ -5,6 +5,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+
 require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -71,7 +72,7 @@ try {
             case 'likeMovie':
                 $viewController->likeMovie();
                 break;
-            case 'dislikesMovie':
+            case 'dislikeMovie':
                 $viewController->dislikeMovie();
                 break;
             case 'favoris':
@@ -83,5 +84,5 @@ try {
         }
     }
 } catch (Exception $e) {
-    die("Une erreur est survenue : " . $e->getMessage());
+    echo ("Une erreur est survenue : " . $e->getMessage());
 }
