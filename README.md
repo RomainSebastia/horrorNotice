@@ -63,7 +63,7 @@ J'avais prévu un système de commentaires entre utilisateurs pour partager leur
 ## capture d'ecran de la page d'accueil version desktop 
 
 <a href="#">
-    <img src="captureHome.jpg" alt="capture home" width = "400px">
+    <img src="captureHome.png" alt="capture home" width = "400px">
   </a>
 
 
