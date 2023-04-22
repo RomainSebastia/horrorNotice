@@ -270,7 +270,7 @@ header #navHeader #close {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  
 }
 /* images des cards des 3 derniers film ajouté */
 #home .movieCardImgHome img {
@@ -560,46 +560,29 @@ header #navHeader #close {
 /* -------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------PAGE AJOUTER UN FILM------------------------------------------------------------------ */
 
-#backgroundAdd {
-  font-family: Arial, sans-serif;
-  background-image: url("../images/skull-and-crossbones-g718cea64e_1920.jpg");
-  background-size: cover;
-  display: flex;
+#createMovie {
+display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   margin: 0;
   flex-direction: column;
   padding-bottom: 30px;
+  background-color: var(--backgroundPage);
 }
 
-#textBeforeAddingFilm {
+#createMovie #textBeforeAddingFilm {
   text-align: justify;
   margin: auto;
 }
 
-#textBeforeAddingFilm h2 {
-  margin-top: 20px;
-  font-family: "Creepster", sans-serif;
-  font-size: 2rem;
+#createMovie #textBeforeAddingFilm h2 {
+  padding: 20px;
   color: var(--textWhite);
-  text-shadow: 2px 2px 0 #000;
   text-align: center;
 }
 
-#textBeforeAddingFilm p {
-  font-family: "Eater", sans-serif;
-  font-size: 0.8rem;
-  color: var(--textWhite);
-  text-shadow: 1px 1px 0 #000;
-  text-align: justify;
-  width: 80%;
-  margin: auto;
-  padding-top: 30px;
-}
-
 /* Styles pour la carte */
-#blockAddAFilm {
+#createMovie #blockAddAFilm {
   background-color: var(--textWhite);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -614,13 +597,13 @@ header #navHeader #close {
 }
 
 /* Styles pour le formulaire */
-#blockAddAFilm form label {
+#createMovie #blockAddAFilm form label {
   display: block;
   font-weight: bold;
   margin-top: 1rem;
 }
 
-#blockAddAFilm form input[type="text"],
+#createMovie #blockAddAFilm form input[type="text"],
 form input[type="date"],
 form input[type="number"],
 form textarea {
@@ -633,11 +616,11 @@ form textarea {
 
 /* resize le textarea */
 
-#description {
+#createMovie #description {
   resize: none;
 }
 
-#blockAddAFilm form input[type="submit"] {
+#createMovie #blockAddAFilm form input[type="submit"] {
   display: block;
   background-color: #e80a0a;
   color: var(--textWhite);
@@ -649,52 +632,29 @@ form textarea {
   cursor: pointer;
 }
 
-#blockAddAFilm form input[type="submit"]:hover {
+#createMovie #blockAddAFilm form input[type="submit"]:hover {
   background-color: var(--buttonValid);
 }
+
+
 
 /* ----page modifier un film */
 
-#backgroundAdd {
-  font-family: Arial, sans-serif;
-  background-image: url("../images/skull-and-crossbones-g718cea64e_1920.jpg");
-  background-size: cover;
+#update {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   margin: 0;
   flex-direction: column;
   padding-bottom: 30px;
 }
 
-#textBeforeAddingFilm {
-  text-align: justify;
-  margin: auto;
-}
-
-#textBeforeAddingFilm h2 {
-  margin-top: 20px;
-  font-family: "Creepster", sans-serif;
-  font-size: 2rem;
-  color: var(--textWhite);
-  text-shadow: 2px 2px 0 #000;
+#update #textBeforeUpdateFilm {
   text-align: center;
 }
 
-#textBeforeAddingFilm p {
-  font-family: "Eater", sans-serif;
-  font-size: 0.8rem;
-  color: var(--textWhite);
-  text-shadow: 1px 1px 0 #000;
-  text-align: justify;
-  width: 80%;
-  margin: auto;
-  padding-top: 30px;
-}
-
 /* Styles pour la carte */
-#blockAddAFilm {
+#update #blocUpdateFilm {
   background-color: var(--textWhite);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -709,13 +669,13 @@ form textarea {
 }
 
 /* Styles pour le formulaire */
-#blockAddAFilm form label {
+#update #blocUpdateAFilm form label {
   display: block;
   font-weight: bold;
   margin-top: 1rem;
 }
 
-#blockAddAFilm form input[type="text"],
+#blocUpdateAFilm form input[type="text"],
 form input[type="date"],
 form input[type="number"],
 form textarea {
@@ -726,13 +686,13 @@ form textarea {
   font-size: 1rem;
 }
 
-/* resize le textarea */
+/* resize le textarea du formulaire */
 
-#description {
+#update #updateDescription {
   resize: none;
 }
 
-#blockAddAFilm form input[type="submit"] {
+#update #blocUpdateAFilm form input[type="submit"] {
   display: block;
   background-color: #e80a0a;
   color: var(--textWhite);
@@ -744,184 +704,7 @@ form textarea {
   cursor: pointer;
 }
 
-#blockAddAFilm form input[type="submit"]:hover {
-  background-color: var(--buttonValid);
-}
-
-/* ----page modifier un film ------- */
-
-#textBeforeAddingFilm {
-  text-align: justify;
-  margin: auto;
-}
-
-#textBeforeAddingFilm h2 {
-  margin-top: 20px;
-  font-family: "Creepster", sans-serif;
-  font-size: 2rem;
-  color: var(--textWhite);
-  text-shadow: 2px 2px 0 #000;
-  text-align: center;
-}
-
-#textBeforeAddingFilm p {
-  font-family: "Eater", sans-serif;
-  font-size: 0.8rem;
-  color: var(--textWhite);
-  text-shadow: 1px 1px 0 #000;
-  text-align: justify;
-  width: 80%;
-  margin: auto;
-  padding-top: 30px;
-}
-
-/* Styles pour la carte */
-#blockAddAFilm {
-  background-color: var(--textWhite);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 600px;
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-
-/* Styles pour le formulaire */
-#blockAddAFilm form label {
-  display: block;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-#blockAddAFilm form input[type="text"],
-form input[type="date"],
-form input[type="number"],
-form textarea {
-  width: 100%;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-/* resize le textarea */
-
-#description {
-  resize: none;
-}
-
-#blockAddAFilm form input[type="submit"] {
-  display: block;
-  background-color: #e80a0a;
-  color: var(--textWhite);
-  font-size: 1.1rem;
-  padding: 8px 32px;
-  margin-top: 24px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#blockAddAFilm form input[type="submit"]:hover {
-  background-color: var(--buttonValid);
-}
-
-/* ----page modifier un film */
-
-#backgroundAdd {
-  font-family: Arial, sans-serif;
-  background-image: url("../images/skull-and-crossbones-g718cea64e_1920.jpg");
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  flex-direction: column;
-  padding-bottom: 30px;
-}
-
-#textBeforeAddingFilm {
-  text-align: justify;
-  margin: auto;
-}
-
-#textBeforeAddingFilm h2 {
-  margin-top: 20px;
-  font-family: "Creepster", sans-serif;
-  font-size: 2rem;
-  color: var(--textWhite);
-  text-shadow: 2px 2px 0 #000;
-  text-align: center;
-}
-
-#textBeforeAddingFilm p {
-  font-family: "Eater", sans-serif;
-  font-size: 0.8rem;
-  color: var(--textWhite);
-  text-shadow: 1px 1px 0 #000;
-  text-align: justify;
-  width: 80%;
-  margin: auto;
-  padding-top: 30px;
-}
-
-/* Styles pour la carte */
-#blockAddAFilm {
-  background-color: var(--textWhite);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 600px;
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-
-/* Styles pour le formulaire */
-#blockAddAFilm form label {
-  display: block;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-#blockAddAFilm form input[type="text"],
-form input[type="date"],
-form input[type="number"],
-form textarea {
-  width: 100%;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-/* resize le textarea */
-
-#description {
-  resize: none;
-}
-
-#blockAddAFilm form input[type="submit"] {
-  display: block;
-  background-color: #e80a0a;
-  color: var(--textWhite);
-  font-size: 1.1rem;
-  padding: 8px 32px;
-  margin-top: 24px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#blockAddAFilm form input[type="submit"]:hover {
+#update #blocUpdateAFilm form input[type="submit"]:hover {
   background-color: var(--buttonValid);
 }
 
@@ -1341,7 +1124,7 @@ textarea {
 #listMovie .movieCardsList {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+
   justify-content: space-between;
 }
 
@@ -1356,6 +1139,7 @@ textarea {
   color: var(--textBlack);
   text-align: center;
   text-transform: uppercase;
+  margin-top: 10px;
 }
 /* paragraphe des films dans la liste */
 
@@ -1365,6 +1149,8 @@ textarea {
   overflow: hidden;
   margin-bottom: 10px;
 }
+
+
 
 /* bloc des cards */
 #listMovie .movieCardList {
@@ -1410,6 +1196,7 @@ textarea {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
+ 
 }
 
 /* hover du bouton */
@@ -1912,8 +1699,6 @@ footer #footerCopyright {
     display: flex;
     flex-direction: column;
   }
-
-  
 
   /* ----page home---- */
 

@@ -24,7 +24,7 @@ class MovieController
         $actors_actresses = htmlspecialchars($data['actors_actresses']);
         $genre = htmlspecialchars($data['genre']);
         $duration = htmlspecialchars($data['duration'], FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
-        $description = htmlspecialchars($data['description']);
+        $description = htmlspecialchars($data['description'],ENT_QUOTES);
 
         // si c'est vide
         if (empty($title)) {
