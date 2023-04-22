@@ -33,22 +33,26 @@
                             <?php elseif (isset($_SESSION['user']) && $movie['like_by_user']) : ?>
                                 <form action="index.php?action=dislikeMovie" method="POST">
                                     <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
-                                    <button type="submit" name="dislike" class="button-dislike"><i class="fas fa-star"></i></button>
+                                    <button type="submit" name="dislike" class="buttonDislike"><i class="fas fa-star"></i></button>
                                 </form>
                             <?php endif; ?>
                         </div>
 
                         <!-- Ajouter des boutons pour modifier et supprimer le film si l'utilisateur est administrateur -->
                         <?php if (isset($_SESSION['user']) && $_SESSION['user']['is_admin'] === 1) : ?>
-                            <form action="index.php?action=update" method="POST">
-                                <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
-                                <button type="submit" class="button-edit">Modifier</button>
-                            </form>
 
-                            <form action="index.php?action=deleteMovie" method="POST">
-                                <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
-                                <button type="submit" class="button-delete">Supprimer</button>
-                            </form>
+                            <div class="buttonAdmin">
+
+                                <form action="index.php?action=update" method="POST">
+                                    <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
+                                    <button type="submit" class="buttonUpdate">Modifier</button>
+                                </form>
+
+                                <form action="index.php?action=deleteMovie" method="POST">
+                                    <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
+                                    <button type="submit" class="buttonDelete">Supprimer</button>
+                                </form>
+                            </div>
                         <?php endif; ?>
                     </div>
                 </a>

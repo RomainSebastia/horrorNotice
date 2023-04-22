@@ -76,6 +76,7 @@ h4 {
   --backgroundPage: #101010;
   --buttonRed: #ff0000;
   --buttonGreen: #32a822;
+  --hoverGreen: #17dc4b;
 }
 
 /* Container */
@@ -270,7 +271,6 @@ header #navHeader #close {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  
 }
 /* images des cards des 3 derniers film ajouté */
 #home .movieCardImgHome img {
@@ -310,7 +310,7 @@ header #navHeader #close {
 }
 
 /* hover de la cards */
-#home  .movieCardHome:hover {
+#home .movieCardHome:hover {
   transform: translateY(-5px);
   transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -498,9 +498,8 @@ header #navHeader #close {
 /* titre des films aimés  */
 #favoris h3 {
   color: var(--textBlack);
- text-align: center;
+  text-align: center;
   text-transform: uppercase;
-
 }
 /* paragraphe des films des favoris  */
 #favoris .movieCardHome p {
@@ -527,7 +526,7 @@ header #navHeader #close {
 }
 
 /* hover de la cards */
-#favoris  .movieCardHome:hover {
+#favoris .movieCardHome:hover {
   transform: translateY(-5px);
   transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -556,7 +555,6 @@ header #navHeader #close {
 #favoris .buttonMovie:hover {
   background-color: var(--buttonGreen);
 }
-
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------------------------------------------------------------------
@@ -976,33 +974,29 @@ form textarea {
 }
 
 #blocRGPD h2 {
-  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 30px;
 }
 
 #blocRGPD h3 {
-  font-size: 1.8rem;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
 #blocRGPD p {
-  font-size: 1.2rem;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-#blocRGPD ul {
-  list-style: disc;
-  margin-left: 40px;
-  margin-bottom: 20px;
+#blocRGPD ul li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
 }
 
 #blocRGPD a {
-  color: #990000;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
+  color: var(--textBlack);
 }
 
 #blocRGPD a:hover {
@@ -1338,15 +1332,13 @@ textarea {
   background-color: var(--buttonValid);
 }
 
-
-
 /* -----------------------PAGE LISTE DE FILMS.php------------------------------ */
 #listMovie h2 {
   text-align: center;
   margin-top: 20px;
-} 
+}
 /* section list */
-#listMovie .movieCardList {
+#listMovie .movieCardsList {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1354,23 +1346,20 @@ textarea {
 }
 
 /* images des cards de la liste */
-#listMovie .movieCardImgList {
+#listMovie .movieCardList img {
   width: 100%;
   object-fit: cover;
   height: 150px;
 }
-
-
 /* titre des films de la liste  */
 #listMovie h3 {
-color: var(--textBlack);
- text-align: center;
-text-transform: uppercase;
-  
+  color: var(--textBlack);
+  text-align: center;
+  text-transform: uppercase;
 }
 /* paragraphe des films dans la liste */
 
-#listMovie .movieCardListContent p {
+#listMovie .movieCardList p {
   margin: 10px;
   color: #555;
   overflow: hidden;
@@ -1378,7 +1367,7 @@ text-transform: uppercase;
 }
 
 /* bloc des cards */
-#listMovie .movieCardsList {
+#listMovie .movieCardList {
   width: 23%;
   margin: 30px auto;
   border: 1px solid #ccc;
@@ -1400,12 +1389,13 @@ text-transform: uppercase;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* flexbox pour gerer les boutons  */
 
 #listMovie .listButtonLike {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 /* button qui dirige vers la page details d'un films */
@@ -1423,21 +1413,20 @@ text-transform: uppercase;
 }
 
 /* hover du bouton */
-#listMovie .listButtonLike.buttonDescriptionMovie:hover {
-  background-color: #4cae4c;
+#listMovie .listButtonLike .buttonDescriptionMovie:hover {
+  background-color: var(--hoverGreen);
 }
 
-
-
+/* bouton like */
 #listMovie .listButtonLike form .buttonLike {
   padding: 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin: 10px;
   border: none;
-  background-color: #5cb85c;
-  color: #f8f9fa;
+  background-color: var(--buttonGreen);
+  color: var(--textWhite);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1452,7 +1441,7 @@ text-transform: uppercase;
 
 #listMovie .listButtonLike form .buttonLike:hover {
   cursor: pointer;
-  background-color: #4cae4c;
+  background-color: var(--buttonGreen);
   transform: scale(1.2);
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -1460,17 +1449,17 @@ text-transform: uppercase;
   -o-transform: scale(1.2);
 }
 
-/* enlever de ses favoris */
+/* bouton dislike */
 
 #listMovie .listButtonLike form .buttonDislike {
   padding: 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin: 10px;
   border: none;
   background-color: gold;
-  color: #f8f9fa;
+  color: var(--textWhite);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1491,6 +1480,52 @@ text-transform: uppercase;
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
+}
+
+#listMovie .buttonAdmin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#listMovie .buttonAdmin form .buttonUpdate {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: none;
+  background-color: rgb(195, 195, 195);
+  color: var(--textWhite);
+  border-radius: 10px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#listMovie .buttonAdmin form .buttonUpdate:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+
+#listMovie .buttonAdmin form .buttonDelete {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: none;
+  background-color: var(--buttonRed);
+  color: #f8f9fa;
+  border-radius: 10px;
+}
+#listMovie .buttonAdmin form .buttonDelete:hover {
+  cursor: pointer;
+  background-color: var(--hoverLien);
 }
 
 /* page details d'un film */
@@ -1803,9 +1838,9 @@ footer #footerCopyright {
   }
   header #navHeader #buttonAuthentification button {
     margin: 10px;
-}
+  }
   /* diminuer taille de des polices pour le responsiv */
-   #about h3 {
+  #about h3 {
     font-size: 1rem;
   }
   #about p {
@@ -1820,24 +1855,26 @@ footer #footerCopyright {
     text-shadow: none;
     font-size: 1.2rem;
     text-align: center;
-  } 
+  }
   h2 {
     font-size: 1.1rem;
     text-align: center;
-    
   }
   h3 {
     font-size: 0.7rem;
     text-align: center;
   }
-  
-  a {
-    font-size: 1.2rem;
-  }
 
+  a {
+    font-size: 0.8rem;
+  }
 
   #favoris h2 {
     padding: 0;
+  }
+
+  #blocRGPD h2 {
+    text-align: center;
   }
 
   #favoris .buttonMovie {
@@ -1846,32 +1883,41 @@ footer #footerCopyright {
     align-items: center;
     margin: 4px auto;
     font-size: 0.7rem;
-    
   }
-  
-  
 
+  #blocRGPD ul li {
+    font-size: 0.9rem;
+    text-align: center;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
   /* -----------------page home--------------------- */
   #home #mainTitreImg h1 {
-   font-size: 1.3rem;
+    font-size: 1.3rem;
     margin-top: 10px;
   }
   #home #mainTitreImg img {
     margin-bottom: 10px;
   }
 
+  #listMovie .movieCardList {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
+  #listMovie .listButtonLike {
+    display: flex;
+    flex-direction: column;
+  }
 
- 
+  
 
   /* ----page home---- */
 
   /* ---page favoris---- */
- 
-
 
   /* fleche pour retourner a la liste des films */
 
@@ -1886,11 +1932,7 @@ footer #footerCopyright {
 
   /* -------------------------------------page list.php----------------------------------- */
 
-
-
   /* bloc list film */
-
- 
 
   #titleList {
     text-align: center;
@@ -1906,8 +1948,6 @@ footer #footerCopyright {
   #pageContact img {
     width: 90%;
   }
-
- 
 }
 
 /* page details du film */
@@ -1924,39 +1964,48 @@ footer #footerCopyright {
     height: 60px;
   }
   /* -----------------------home------------------------------ */
-  
+
   #home #mainTitreImg {
     display: flex;
     flex-direction: column;
     padding: 20px;
   }
 
-
   /* bloc home film */
   #home .movieCardsHome {
     padding: 0;
     margin: auto;
   }
- 
+
   /* page favoris */
 
   #home .movieCardHome {
-    width:60%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-   }
+  }
 
-   /* page list */
+  /* page list */
 
-   
+  #listMovie .movieCardList {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    
-   
+  #listMovie .listButtonLike {
+    display: flex;
+    flex-direction: column;
+  }
 
+  #listMovie .buttonAdmin {
+    display: flex;
+    justify-content: space-between;
+  }
 
   /* -------a propos-------------- */
-
 
   /* /* taille de l'image de chucky */
 
@@ -1977,12 +2026,11 @@ footer #footerCopyright {
   /* page favoris */
 
   #favoris .movieCardHome {
-    width:60%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-   }
- 
+  }
 
   footer {
     width: 100%;
@@ -1995,7 +2043,6 @@ footer #footerCopyright {
   footer #logoFooter #imgLogoFooter {
     margin: 20px auto;
     display: flex;
-    
   }
   footer #blocFooter {
     display: block;
@@ -2052,7 +2099,6 @@ footer #footerCopyright {
     padding: 20px;
     max-width: 90%;
   }
- 
 
   /* rgpd */
 
@@ -2061,30 +2107,14 @@ footer #footerCopyright {
     padding: 20px;
   }
 
-  #blocRGPD h2 {
-    
-    margin-bottom: 20px;
-  }
-
   #blocRGPD h3 {
-    
     margin-top: 30px;
     margin-bottom: 15px;
   }
-
-  #blocRGPD p {
-   
-    margin-bottom: 15px;
+  #blocRGPD ul li {
+    font-size: 0.9rem;
+    text-align: center;
   }
-
-  #blocRGPD ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-  }
-
-
-  
-  
 
   /* page contact */
 
@@ -2105,7 +2135,7 @@ footer #footerCopyright {
     height: 50px;
   }
   /* ----home---- */
-  
+
   /* bloc du h1 et de l'image */
   #home #mainTitreImg {
     padding: 10px;
@@ -2149,11 +2179,10 @@ footer #footerCopyright {
   }
   /* FOOTER */
   footer #logoFooter #imgLogoFooter {
-    
     margin-bottom: 10px;
   }
- 
+
   footer #footerLinks a {
-   margin: 0 auto;
+    margin: 0 auto;
   }
 }
