@@ -19,12 +19,13 @@ class MovieController
     private function validateInputMovie($data)
     {
         $errors = [];
-        $title = htmlspecialchars($data['title']);
-        $release_date = htmlspecialchars($data['release_date']);
-        $actors_actresses = htmlspecialchars($data['actors_actresses']);
-        $genre = htmlspecialchars($data['genre']);
-        $duration = htmlspecialchars($data['duration'], FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
-        $description = htmlspecialchars($data['description'],ENT_QUOTES);
+        $title = $data['title'];
+        $release_date = $data['release_date'];
+        $actors_actresses = $data['actors_actresses'];
+        $genre = $data['genre'];
+        $duration = filter_var($data['duration'], FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
+        $description = $data['description'];
+        
 
         // si c'est vide
         if (empty($title)) {
@@ -211,6 +212,7 @@ class MovieController
         $moviesGet = $this->movieModel->readAllMovie();
         // recuperer la functions pour le format de durée
         $movies = $this->formatDuration($moviesGet);
+        
         return $movies;
     }
 

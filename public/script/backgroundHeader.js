@@ -7,10 +7,10 @@ function BackgroundImage() {
 
   // Déclare un tableau contenant les noms des images de fond d'écran disponibles
   const backgroundImages = [
-    "halloween.png",
-    "nuit.jpg",
-    "foret.jpg",
-    "fantasy.jpg",
+    
+    "screamScary.jpg",
+    "horrorLegend.jpg",
+    "conjuring.jpg"
   ];
 
   // Génère un indice aléatoire entre 0 et la longueur du tableau "backgroundImages" et le stocke dans la variable "randomIndex"

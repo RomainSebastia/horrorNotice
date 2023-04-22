@@ -1,5 +1,5 @@
-<?php include ("app/views/layouts/head.php") ?>
-<?php include ("app/views/layouts/header.php") ?>
+<?php include("app/views/layouts/head.php") ?>
+<?php include("app/views/layouts/header.php") ?>
 
 <main id="home">
     <div id="mainTitreImg">
@@ -21,10 +21,8 @@
                     <div class="movieCardContent">
                         <h3><?= htmlspecialchars($movie['title']) ?></h3>
                         <p><strong>Date de sortie:</strong> <time><?= htmlspecialchars($movie['release_date']) ?></time></p>
-                        <p><strong>Acteurs/Actrices:</strong> <?= htmlspecialchars($movie['actors_actresses']) ?></p>
-                        <p><strong>Genre:</strong> <?= htmlspecialchars($movie['genre']) ?></p>
                         <p><strong>Durée:</strong> <time><?= htmlspecialchars($movie['duration']) ?></time></p>
-                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 20)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
+                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
 
                         <button class="buttonMovie">Voir plus</button>
                     </div>
@@ -47,10 +45,8 @@
                     <div class="movieCardContent">
                         <h3><?= htmlspecialchars($movie['title']) ?></h3>
                         <p><strong>Date de sortie:</strong> <time><?= htmlspecialchars($movie['release_date']) ?></time></p>
-                        <p><strong>Acteurs/Actrices:</strong> <?= htmlspecialchars($movie['actors_actresses']) ?></p>
-                        <p><strong>Genre:</strong> <?= htmlspecialchars($movie['genre']) ?></p>
                         <p><strong>Durée:</strong> <time><?= htmlspecialchars($movie['duration']) ?></time></p>
-                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 20)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
+                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
 
                         <button class="buttonMovie">Voir plus</button>
                     </div>
@@ -70,4 +66,4 @@
 
 
 
-<?php include ("app/views/layouts/footer.php"); ?>
+<?php include("app/views/layouts/footer.php"); ?>

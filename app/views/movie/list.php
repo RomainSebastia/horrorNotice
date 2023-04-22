@@ -7,6 +7,7 @@
 
     <section class="movieCardsList">
         <?php foreach ($movies as $movie) : ?>
+
             <article class="movieCardList">
                 <a href="/horrorNotice/index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
                     <div class="movieCardImgList">
@@ -15,10 +16,8 @@
                     <div class="movieCardListContent">
                         <h3><?= htmlspecialchars($movie['title']) ?></h3>
                         <p><strong>Date de sortie:</strong> <time><?= htmlspecialchars($movie['release_date']) ?></time></p>
-                        <p><strong>Acteurs/Actrices:</strong> <?= htmlspecialchars($movie['actors_actresses']) ?></p>
-                        <p><strong>Genre:</strong> <?= htmlspecialchars($movie['genre']) ?></p>
                         <p><strong>Durée:</strong> <time><?= htmlspecialchars($movie['duration']) ?></time></p>
-                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 20)) ?>...</span><span id="full-description" style="display:none;"><?= htmlspecialchars($movie['description']) ?></span></p>
+                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span id="full-description" style="display:none;"><?= htmlspecialchars($movie['description']) ?></span></p>
 
                         <div class="listButtonLike">
                             <button class="buttonDescriptionMovie">Voir plus</button>

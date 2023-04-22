@@ -1124,7 +1124,6 @@ textarea {
 #listMovie .movieCardsList {
   display: flex;
   flex-wrap: wrap;
-
   justify-content: space-between;
 }
 
@@ -1132,8 +1131,11 @@ textarea {
 #listMovie .movieCardList img {
   width: 100%;
   object-fit: cover;
-  height: 150px;
+  object-position: center;
+  height: 200px;
+  
 }
+
 /* titre des films de la liste  */
 #listMovie h3 {
   color: var(--textBlack);
@@ -1148,6 +1150,7 @@ textarea {
   color: #555;
   overflow: hidden;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 
