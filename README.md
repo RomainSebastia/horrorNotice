@@ -61,10 +61,11 @@ Pour vous connecter en tant qu'administrateur, utilisez l'adresse email **horror
 J'avais prévu un système de commentaires entre utilisateurs pour partager leur avis sur les films, mais je n'ai pas eu le temps de le mettre en place faute de temps.
 
 ## capture d'ecran de la page d'accueil version desktop 
-
+<div align="center">
 <a href="#">
-    <img src="captureHome.png" alt="capture home" width = "400px">
+    <img src="captureHome.png" alt="capture home" width = "600px">
   </a>
+  </div
 
 
 
