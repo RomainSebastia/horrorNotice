@@ -114,7 +114,7 @@ header #navHeader #ulMenu {
 header #navHeader #ulMenu li a {
   text-decoration: none;
   color: var(--textWhite);
-  margin: 0 30px;
+  margin: 0 20px;
   font-size: 1.1rem;
   font-family: "Creepster", sans-serif;
   transition: color 0.7s ease;
@@ -1141,7 +1141,7 @@ textarea {
 
 /* bloc des cards */
 #listMovie .movieCardList {
-  width: 23%;
+  width: 30%;
   margin: 30px auto;
   border: 1px solid #ccc;
   border-radius: 5px;
