@@ -52,10 +52,6 @@ Pour installer Horror Notice sur votre ordinateur, vous devez suivre les étapes
 
 4. Créez un fichier .env à la racine du projet en copiant le contenu du fichier .env.example et en y entrant les informations de connexion à votre base de données.
 
-## Se connecter en tant qu'administrateur
-
-Pour vous connecter en tant qu'administrateur, utilisez l'adresse email **horrornotice@hotmail.com** et le mot de passe __horror__.
-
 ## Les améliorations futures
 
 J'avais prévu un système de commentaires entre utilisateurs pour partager leur avis sur les films, mais je n'ai pas eu le temps de le mettre en place faute de temps.
