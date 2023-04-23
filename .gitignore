@@ -1,4 +1,8 @@
-/data/uploadsImgFilm/*
-/data/uploadsImgUser/*
+/data/uploadsImgFilm/*jpg
+/data/uploadsImgFilm/*jpeg
+/data/uploadsImgFilm/*png
+/data/uploadsImgUser/*.jpg
+/data/uploadsImgUser/*.jpeg
+/data/uploadsImgUser/*.png
 /vendor
 /.env
