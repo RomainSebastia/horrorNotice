@@ -1,5 +1,5 @@
-<?php include("app/views/layouts/head.php"); ?>
-<?php include("app/views/layouts/header.php"); ?>
+<?php require_once ("app/views/layouts/head.php"); ?>
+<?php include_once ("app/views/layouts/header.php"); ?>
 
 
 <!-- afficher les films aimés par l'utilisateur -->
@@ -25,4 +25,4 @@
 </main>
 
 
-<?php include "app/views/layouts/footer.php"; ?>
+<?php include_once "app/views/layouts/footer.php"; ?>

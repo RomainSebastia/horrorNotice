@@ -1,5 +1,5 @@
-<?php include("app/views/layouts/head.php"); ?>
-<?php include("app/views/layouts/header.php"); ?>
+ <?php require_once ("app/views/layouts/head.php"); ?>
+<?php include_once ("app/views/layouts/header.php"); ?>
 
 <main id="blocMention">
     <h2>Mentions légales</h2>
@@ -42,4 +42,4 @@
     </section>
 </main>
 
-<?php include "app/views/layouts/footer.php"; ?>
+<?php include_once "app/views/layouts/footer.php"; ?>

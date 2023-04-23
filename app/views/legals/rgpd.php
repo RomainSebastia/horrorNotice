@@ -1,5 +1,5 @@
-<?php include("app/views/layouts/head.php"); ?>
-<?php include("app/views/layouts/header.php"); ?>
+ <?php require_once ("app/views/layouts/head.php"); ?>
+<?php include_once ("app/views/layouts/header.php"); ?>
 
 <main id="blocRGPD">
     <h2>Politique de confidentialité et RGPD</h2>

@@ -42,4 +42,4 @@
 </main>
 
 
-<?php include "app/views/layouts/footer.php"; ?>
+<?php include_once "app/views/layouts/footer.php"; ?>
