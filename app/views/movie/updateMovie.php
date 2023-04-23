@@ -36,14 +36,14 @@
             <input type="number" name="duration" id="duration" value="<?= htmlspecialchars($movie['duration']) ?>" required><br>
 
             <label for="image">Affiche du film</label>
-            <input type="file" name="image" id="image" accept="image/*" required><br>
+            <input type="file" name="image" id="image" accept="image/*"><br>
 
             <label for="description">Description du film</label>
             <textarea id="UpdateDescription" name="description" rows="5" cols="40" required><?= htmlspecialchars($movie['description']) ?></textarea>
 
 
 
-            <input type="submit" value="Mdifier">
+            <input type="submit" value="Modifier">
         </form>
     </section>
 

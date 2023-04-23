@@ -67,6 +67,8 @@ h4 {
   font-size: 1.3rem;
 }
 
+
+
 /* Variables */
 :root {
   --textWhite: #fff;
@@ -202,7 +204,7 @@ header #navHeader #close {
 
 /* id qui me permet de changer de photo aléatoirement tous les minutes */
 #background-header {
-  height: 100vh;
+  height:100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -292,6 +294,8 @@ header #navHeader #close {
   margin: 10px;
   color: #555;
   overflow: hidden;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 /* bloc des cards */
@@ -300,6 +304,8 @@ header #navHeader #close {
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background-color: var(--textWhite);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -322,15 +328,16 @@ header #navHeader #close {
 
 /* button qui dirige vers la page details d'un films */
 #home .buttonMovie {
-  background-color: #5cb85c;
+  background-color: var(--buttonGreen);
   border: none;
-  color: white;
+  color: var(--textWhite);
   padding: 10px;
   text-align: center;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
+  
 }
 /* hover du bouton */
 #home .buttonMovie:hover {
@@ -1131,8 +1138,7 @@ textarea {
 #listMovie .movieCardList img {
   width: 100%;
   object-fit: cover;
-  object-position: center;
-  height: 200px;
+  height: 150px;
   
 }
 
@@ -1689,6 +1695,12 @@ footer #footerCopyright {
   }
   #home #mainTitreImg img {
     margin-bottom: 10px;
+  }
+  #home .movieCardHome {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   #listMovie .movieCardList {
