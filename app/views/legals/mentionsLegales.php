@@ -1,9 +1,5 @@
-<?php $pageName = "Mentions-Légals"; ?>
-
-<!-- Appel du header -->
-<?php require_once("app/views/layouts/head.php") ?>
-<?php include_once("app/views/layouts/header.php") ?>
-
+<?php include("app/views/layouts/head.php"); ?>
+<?php include("app/views/layouts/header.php"); ?>
 
 <main id="blocMention">
     <h2>Mentions légales</h2>
@@ -36,7 +32,7 @@
 
         <h3>Données personnelles</h3>
         <p>
-            Pour plus d'informations sur la collecte et le traitement de vos données personnelles, veuillez consulter notre <a href="index.php?action=rgpd">page RGPD</a>.
+            Pour plus d'informations sur la collecte et le traitement de vos données personnelles, veuillez consulter notre <a href="index.php?action=rgpd" title="RGPD">page RGPD</a>.
         </p>
 
         <h3>Loi applicable et juridiction compétente</h3>
@@ -46,6 +42,4 @@
     </section>
 </main>
 
-
-<!-- Appel du footer -->
-<?php require_once "app/views/layouts/footer.php"; ?>
+<?php include "app/views/layouts/footer.php"; ?>

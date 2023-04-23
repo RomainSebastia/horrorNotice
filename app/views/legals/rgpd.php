@@ -1,7 +1,5 @@
-<?php $pageName = "RGPD"; ?>
-
-<?php require_once("app/views/layouts/head.php") ?>
-<?php include_once("app/views/layouts/header.php") ?>
+<?php include("app/views/layouts/head.php"); ?>
+<?php include("app/views/layouts/header.php"); ?>
 
 <main id="blocRGPD">
     <h2>Politique de confidentialité et RGPD</h2>
@@ -52,9 +50,9 @@
 
         <h3>Contact</h3>
         <p>
-            Pour toute question concernant cette politique de confidentialité, ou pour exercer vos droits relatifs à la protection de vos données personnelles, n'hésitez pas à nous contacter sur la page <a href="index.php?action=contact">Contact</a></p>
+            Pour toute question concernant cette politique de confidentialité, ou pour exercer vos droits relatifs à la protection de vos données personnelles, n'hésitez pas à nous contacter sur la page <a href="index.php?action=contact" title="Contact">Contact</a></p>
     </section>
 </main>
 
 
-    <?php include_once("app/views/layouts/footer.php") ?>
+<?php include("app/views/layouts/footer.php"); ?>

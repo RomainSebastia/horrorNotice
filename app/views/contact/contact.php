@@ -1,5 +1,3 @@
-<?php $pageName = 'Contact'; ?>
-
 <?php include "app/views/layouts/head.php" ?>
 <?php include "app/views/layouts/header.php" ?>
 
@@ -9,32 +7,37 @@
     <h2 id="titleContact">Contactez-nous</h2>
 
     <div id="blocContactParagraph">
-    <p>Découvrez <strong>Horror Notice</strong>, le lieu incontournable pour les amateurs de <strong>films d'horreur</strong> ! Que vous soyez friands de classiques effrayants ou en quête de frissons inédits, notre sélection saura vous combler.</p>
-    <p>N'hésitez pas à nous solliciter pour toutes questions, propositions ou simplement pour exprimer votre passion du <strong>cinéma</strong> d'épouvante. Utilisez le formulaire ci-dessous pour nous décrire votre requête, et nous nous engageons à vous répondre rapidement avec une proposition d'accompagnement adaptée.</p>
+      <p>Découvrez <strong>Horror Notice</strong>, le lieu incontournable pour les amateurs de <strong>films d'horreur</strong> ! Que vous soyez friands de classiques effrayants ou en quête de frissons inédits, notre sélection saura vous combler.</p>
+      <p>N'hésitez pas à nous solliciter pour toutes questions, propositions ou simplement pour exprimer votre passion du <strong>cinéma</strong> d'épouvante. Utilisez le formulaire ci-dessous pour nous décrire votre requête, et nous nous engageons à vous répondre rapidement avec une proposition d'accompagnement adaptée.</p>
     </div>
+    <!-- image avant le formulaire de contact -->
 
     <img src="public/images/contact.jpg" alt="Photo Contact">
 
     <form action="index.php?action=contact" method="post">
+      <!-- prenom -->
       <div>
         <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" required>
+        <input type="text" class="prenom" name="name" required value="<?= htmlspecialchars($_POST['name'] ?? '') ?>">
       </div>
-
+      <!-- nom -->
       <div>
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
+        <input type="text" class="nom" name="surname" required value="<?= htmlspecialchars($_POST['surname'] ?? '') ?>">
       </div>
       <div>
+        <!-- adresse e-mail -->
         <label for="email">Adresse e-mail :</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" class="email" name="email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
       </div>
+      <!-- message -->
       <div>
         <label for="message">Message :</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea class="message" name="message" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
       </div>
       <button type="submit">Envoyer</button>
     </form>
+
   </section>
 </main>
 

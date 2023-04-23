@@ -2,7 +2,7 @@
 <?php include "app/views/layouts/header.php" ?>
 
 <!-- main a propos -->
-<main id="about">
+<main class="about">
   <section>
     <h2>À propos d'Horror Notice</h2>
     <p>Bienvenue sur <strong>Horror Notice</strong>, le site pour les fans de <strong>films d'horreur</strong> !</p>
@@ -16,9 +16,9 @@
     <p>Si vous avez des questions, des suggestions ou des commentaires, n'hésitez pas à nous contacter à l'adresse suivante : contact@horrornotice.com ou sur la page <a href="index.php?action=contact"> Contact</a> .</p>
     <h3>Venez nombreux Chucky vous attends</h3>
     <!-- image de chucky -->
-    <div id ="aboutBlocImg">
+    <div id="aboutBlocImg">
       <!-- image de chucky -->
-      <img src="public/images/chucky.jpg" alt="chucky" id="about">
+      <img src="public/images/chucky.jpg" alt="chucky" class="about">
       <a href="index.php?action=list" id="backList" title="pageList">
         <!-- fleche changement de page -->
         <i class="fas fa-arrow-left"></i> Visitez notre liste de films

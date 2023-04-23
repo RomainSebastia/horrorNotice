@@ -15,6 +15,7 @@ class ViewController
     private $isLoggedIn;
     private $isAdmin;
     private $likeController;
+    private $contactController;
 
     // instancie mes controllers
     public function __construct()
@@ -25,6 +26,7 @@ class ViewController
         $this->isLoggedIn = $this->auth->isAuthenticated();
         $this->isAdmin = $this->auth->isAdminAuthenticated();
         $this->likeController = new LikeController();
+        $this->contactController = new ContactController();
     }
 
     // Page d'accueil
@@ -101,7 +103,7 @@ class ViewController
             }
         }
 
-        header('Location: /horrorNotice/index.php?action=list');
+        header('Location:  index.php?action=list');
     }
 
     // pour voir la description complet du film
@@ -131,15 +133,39 @@ class ViewController
     public function about()
     {
         $pageName = "A propos";
+        // Afficher la page a propos
         require('app/views/about/about.php');
     }
+
 
     // Page de contact
     public function contact()
     {
+        //  nom de la page pour l'affichage dans la vue
         $pageName = "Contact";
+        
+        // Initialiser les variables pour stocker les messages d"erreur et de validation
+        $errors = [];
+        $success = false;
+    
+        // Vérifier si la requête est de type POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Appeler la méthode createMessage() de ContactController et stocker le résultat
+            $result = $this->contactController->createMessage();
+    
+            // Si le résultat est vrai le message a été créé avec succès
+            if ($result === true) {
+                $success = true;
+            } else {
+                // Sinon, affiche une erreurs
+                $errors = $result;
+            }
+        }
+    
+        // vue de la page de contact
         require('app/views/contact/contact.php');
     }
+    
 
     // Page des mentions légales
     public function legals()
@@ -163,18 +189,6 @@ class ViewController
         // On récupère tous les films
         $movies = $this->movieController->getAllMovies();
 
-        // Si l'utilisateur est connecté, on récupère son ID
-        if (isset($_SESSION['user'])) {
-            $user_id = $_SESSION['user']['id'];
-
-            // Pour chaque film, on vérifie si l'utilisateur a aimé le film
-            foreach ($movies as &$movie) {
-                $movie_id = $movie['id'];
-                $like = $this->likeController->read($user_id, $movie_id);
-                $movie['like_by_user'] = !empty($like);
-            }
-        }
-
         // On affiche la liste des films
         require('app/views/movie/list.php');
     }
@@ -186,13 +200,12 @@ class ViewController
         $pageName = "Inscription";
         // Si l'utilisateur est déjà connecté on le redirige vers la page d'accueil
         if ($this->isLoggedIn) {
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location:  index.php?action=home');
         }
 
         // Si le formulaire est soumis, on appelle la méthode createUser() du UserController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $userController = new UserController();
-            $userController->createUser();
+            $this->userController->createUser();
         }
 
         //  page d'inscription
@@ -208,7 +221,7 @@ class ViewController
 
         // Si l'utilisateur est déjà connecté on le redirige vers la page d'accueil
         if ($this->isLoggedIn) {
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location:  index.php?action=home');
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -224,7 +237,7 @@ class ViewController
     {
         $this->auth->logout(); // Déconnexion de l'utilisateur
         $_SESSION['message'] = 'Vous êtes maintenant déconnecté.';
-        header('Location: /horrorNotice/index.php?action=home');
+        header('Location:  index.php?action=home');
     }
 
     // page profil
@@ -235,7 +248,7 @@ class ViewController
         // Vérifier si l'utilisateur est connecté
         if (!$this->isLoggedIn) {
             // Si l'utilisateur n'est pas connecté, rediriger vers la page home
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location:  ion=home');
         }
 
         $errors = []; // Initialisation des erreurs
@@ -287,7 +300,7 @@ class ViewController
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'DELETE') {
             $this->userController->deleteUser($userId);
             session_destroy(); // Déconnecter l'utilisateur après la suppression
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location:  index.php?action=home');
         }
 
         // Charger la vue "profil.php"
@@ -301,7 +314,7 @@ class ViewController
 
         // Vérifier si l'utilisateur est connecté
         if (!$this->isLoggedIn) {
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location:  index.php?action=home');
         }
         // verifie que le formulaire a était soumis
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -329,7 +342,7 @@ class ViewController
     {
         // Vérifie si l'utilisateur est connecté
         if (!$this->isLoggedIn) {
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location:  index.php?action=home');
         }
 
         // Vérifie que le formulaire a été soumis
@@ -359,7 +372,7 @@ class ViewController
         $username = $user['name'];
         // Vérifie si l'utilisateur est connecté
         if (!$this->isLoggedIn) {
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location:  index.php?action=home');
         }
 
 
@@ -392,6 +405,6 @@ class ViewController
             $this->movieController->deleteMovie($movie_id);
         }
 
-        header('Location: /horrorNotice/index.php?action=list');
+        header('Location:  index.php?action=list');
     }
 }

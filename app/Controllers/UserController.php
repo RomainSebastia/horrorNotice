@@ -53,6 +53,7 @@ class UserController
     private function imageDownloadUsers($fileUsers)
     {
         
+        
         $allowedExtensionsUsers = ['jpg', 'jpeg', 'png'];
         $temporyFileNameUsers = $fileUsers['tmp_name'];
         $extensionUsers = pathinfo($fileUsers['name'], PATHINFO_EXTENSION);
@@ -71,7 +72,7 @@ class UserController
                 $this->auth->updateProfilePicture($_SESSION['user']['id'], $imageUrlUsers);
                 $_SESSION['user']['profile_picture_url'] = $imageUrlUsers;
                 $_SESSION['message'] = 'Image de profil mise à jour avec succès.';
-                header('Location: /horrorNotice/index.php?action=profil');
+                header('Location: index.php?action=profil');
             }
         } else {
             $errors['message'] = "Erreur lors du téléchargement de l'image. Veuillez télécharger un fichier au format JPEG, JPG, ou PNG.";
@@ -110,7 +111,7 @@ class UserController
                 // Connexion de l'utilisateur
                 $this->auth->login($email, $password);
                 $_SESSION['message'] = 'Inscription réussie et connexion effectuée.';
-                header('Location: /horrorNotice/index.php?action=home'); // Redirection vers la page d'accueil
+                header('Location: index.php?action=home'); // Redirection vers la page d'accueil
             }
         }
         // Affichage de la vue du formulaire d'inscription
@@ -144,7 +145,7 @@ class UserController
         
         // Vérification si l'utilisateur est déjà connecté
         if ($this->auth->isAuthenticated()) {
-            header('Location: /horrorNotice/index.php?action=home');
+            header('Location: index.php?action=home');
         }
         $errors = [];
         
@@ -164,7 +165,7 @@ class UserController
                 if ($user && password_verify($password, $user['password'])) {
                     $this->auth->login($email, $password); // Connexion de l'utilisateur
                     $_SESSION['message'] = 'Connexion réussie.';
-                    header('Location: /horrorNotice/index.php?action=home'); // Redirection vers la page d'accueil
+                    header('Location:  index.php?action=home'); // Redirection vers la page d'accueil
 
                 } else {
                     $errors[] = 'Email ou mot de passe incorrect.';
@@ -184,29 +185,34 @@ class UserController
 
     // modifier les informations d'un users
 
+   
+
     public function updateUserName($id, $newName, $newEmail, $newPassword, $fileUser)
-    {
-        // Obtenir l'ID de l'utilisateur actuellement connecté (à adapter en fonction de votre implémentation)
-        $currentUser = $this->auth->getCurrentUser();
+{
+    // Obtenir l'ID de l'utilisateur actuellement connecté (à adapter en fonction de votre implémentation)
+    $currentUser = $this->auth->getCurrentUser();
+    $newProfilePicture = $currentUser['profile_picture_url'];
+
+    if ($fileUser !== null) {
         $newProfilePicture = $this->imageDownloadUsers($fileUser);
 
         if (isset($newProfilePicture['error'])) {
             // retourne une erreur
             return $newProfilePicture;
         }
-
-        // Vérifier si l'utilisateur actuel est autorisé à modifier le compte
-        if ($id === $currentUser['id']) {
-            $this->user->update($id, $newName, $newEmail, $newPassword, $newProfilePicture);
-            $_SESSION['message'] = "Le nom d'utilisateur a été mis à jour avec succès.";
-        } else {
-            // L'utilisateur n'est pas autorisé à modifier ce compte
-
-            $_SESSION['error'] = "Vous n'êtes pas autorisé à modifier ce compte.";
-           
-        }
     }
 
+    // Vérifier si l'utilisateur actuel est autorisé à modifier le compte
+    if ($id === $currentUser['id']) {
+        $this->user->update($id, $newName, $newEmail, $newPassword, $newProfilePicture);
+        $_SESSION['message'] = "Le nom d'utilisateur a été mis à jour avec succès.";
+    } else {
+        // L'utilisateur n'est pas autorisé à modifier ce compte
+        $_SESSION['error'] = "Vous n'êtes pas autorisé à modifier ce compte.";
+    }
+}
+
+    
     // supprimer un users
 
     public function deleteUser()
@@ -219,11 +225,11 @@ class UserController
         if ($result) {
             // La suppression a été effectuée avec succès
             $_SESSION['message'] = 'L\'utilisateur a été supprimé avec succès.';
-            header('Location: /horrorNotice/index.php?action=profil');
+            header('Location:  index.php?action=profil');
         } else {
             // La suppression a échoué
             $_SESSION['error'] = 'Erreur lors de la suppression de l\'utilisateur.';
-            header('Location: /horrorNotice/index.php?action=profil');
+            header('Location: index.php?action=profil');
         }
     }
 }

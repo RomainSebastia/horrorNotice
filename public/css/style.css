@@ -58,16 +58,14 @@ h4 {
 }
 
 h2 {
-  font-size: 1.7rem;
-}
-h3 {
   font-size: 1.5rem;
 }
-h4 {
-  font-size: 1.3rem;
+h3 {
+  font-size: 1.4rem;
 }
-
-
+h4 {
+  font-size: 1.2rem;
+}
 
 /* Variables */
 :root {
@@ -81,9 +79,7 @@ h4 {
   --hoverGreen: #17dc4b;
 }
 
-/* Container */
-
-/* Header */
+/* --------------------HEADER-------------------- */
 header {
   width: 100%;
   padding: 0 10px;
@@ -204,7 +200,7 @@ header #navHeader #close {
 
 /* id qui me permet de changer de photo aléatoirement tous les minutes */
 #background-header {
-  height:100vh;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -228,19 +224,19 @@ header #navHeader #close {
 /* l'alerte si tout est validé */
 .alert-success {
   background-color: #d4edda;
-  color: #155724;
+  color: var(--buttonGreen);
   border-color: #c3e6cb;
 }
 /* l'alerte si il y a une erreur */
 .alert-danger {
-  background-color: #ff0000;
+  background-color: var(--buttonRed);
   color: var(--textWhite);
   border-color: #c3e6cb;
 }
 
 /* Fin du Header */
 
-/* ----home---- */
+/* ---------------PAGE HOME-------------------- */
 #home #mainTitreImg h1 {
   font-size: 2rem;
   color: var(--textBlack);
@@ -272,7 +268,6 @@ header #navHeader #close {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  
 }
 /* images des cards des 3 derniers film ajouté */
 #home .movieCardImgHome img {
@@ -295,12 +290,11 @@ header #navHeader #close {
   color: #555;
   overflow: hidden;
   margin-bottom: 10px;
-  width: 100%;
 }
 
 /* bloc des cards */
 #home .movieCardHome {
-  width: 23%;
+  width: 30%;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -321,12 +315,13 @@ header #navHeader #close {
   transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
+/* masquer une partie de la description */
 
 #home .fullDescription {
   display: none;
 }
 
-/* button qui dirige vers la page details d'un films */
+/* button qui dirige vers la page details d'un film */
 #home .buttonMovie {
   background-color: var(--buttonGreen);
   border: none;
@@ -337,56 +332,55 @@ header #navHeader #close {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
-  
+  display: inline-block;
 }
 /* hover du bouton */
 #home .buttonMovie:hover {
   background-color: var(--buttonGreen);
 }
 
-/* -------------------------------------------a propos------------------------------------------------ */
+/* -------------------------------------------PAGE A PROPOS------------------------------------------------ */
 
-#about {
+.about {
   background-color: var(--backgroundPage);
   color: #fff;
   padding: 40px;
 }
 
-#about h2 {
+.about h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-#about h3 {
+.about h3 {
   font-size: 1.4rem;
   font-weight: bold;
   margin-top: 40px;
   margin-bottom: 10px;
 }
 
-#about p {
+.about p {
   font-size: 1.1rem;
   margin-bottom: 30px;
   line-height: 1.6;
-  text-align: justify;
+  text-align: center;
 }
-/* liens a pour la page about */
-#about a {
+
+.about a {
   color: var(--buttonValid);
   text-decoration: none;
 }
 
-/* hover de la page about */
-#about a:hover {
+.about a:hover {
   color: var(--hoverLien);
 }
 
-#about h4 {
+.about h4 {
   text-align: center;
   font-size: 1.2rem;
 }
 /* taille de l'image de chucky */
-#about img {
+.about img {
   object-fit: cover;
   max-width: 50%;
   display: block;
@@ -394,20 +388,9 @@ header #navHeader #close {
   height: auto;
 }
 
-/* la div en position relative */
-#aboutBlocImg {
-  position: relative;
-}
-/* fleche pour retourner a la liste des films */
-#backList {
-  position: absolute;
-  top: 50%;
-  right: 70px;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
 
-/* -------------------------------------Profil------------------------------------------------------ */
+
+/* -------------------------------------PAGE Profil------------------------------------------------------ */
 
 /* Profil */
 #profil {
@@ -429,7 +412,6 @@ header #navHeader #close {
 }
 
 #profil #nameTitle {
-  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -438,11 +420,11 @@ header #navHeader #close {
   height: auto;
   object-fit: cover;
   border-radius: 60%;
-  margin-bottom: 20px;
   -webkit-border-radius: 60%;
   -moz-border-radius: 60%;
   -ms-border-radius: 60%;
   -o-border-radius: 60%;
+  margin-bottom: 20px;
 }
 
 #profil form {
@@ -471,7 +453,7 @@ header #navHeader #close {
   height: 40px;
   font-size: 1rem;
   font-weight: bold;
-  color: #fff;
+  color: var(--textWhite);
   background-color: #007bff;
   border: none;
   border-radius: 4px;
@@ -479,10 +461,11 @@ header #navHeader #close {
 }
 
 #profil form button:hover {
-  background-color: #23d046;
+  background-color: var(--buttonGreen);
 }
 
-/* PAGE FAVORIS DE L'UTILISATEUR */
+/*------------PAGE FAVORIS------------------------ */
+
 #favoris h2 {
   text-align: center;
   margin-top: 20px;
@@ -518,7 +501,7 @@ header #navHeader #close {
 
 /* bloc des cards */
 #favoris .movieCardHome {
-  width: 23%;
+  width: 28%;
   margin: 30px auto;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -531,6 +514,9 @@ header #navHeader #close {
 #favoris .movieCardHome a {
   text-decoration: none;
 }
+#favoris h2 {
+  color: var(--textBlack);
+}
 
 /* hover de la cards */
 #favoris .movieCardHome:hover {
@@ -539,15 +525,16 @@ header #navHeader #close {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* masquer une partie de la description */
 #favoris .fullDescription {
   display: none;
 }
 
 /* button qui dirige vers la page details d'un films */
 #favoris .buttonMovie {
-  background-color: #5cb85c;
+  background-color: var(--buttonGreen);
   border: none;
-  color: white;
+  color: var(--textWhite);
   padding: 10px;
   text-align: center;
   align-items: center;
@@ -563,18 +550,19 @@ header #navHeader #close {
   background-color: var(--buttonGreen);
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------ */
-/* -------------------------------------------------------------------------------------------------------------------------------------
---------------------------------------------------PAGE AJOUTER UN FILM------------------------------------------------------------------ */
+/* -----------PAGE AJOUTER UN FILM--------------------------- */
 
 #createMovie {
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   flex-direction: column;
   padding-bottom: 30px;
-  background-color: var(--backgroundPage);
+  background-color: var(--textWhite);
+}
+#createMovie h2 {
+  margin-top: 20px;
 }
 
 #createMovie #textBeforeAddingFilm {
@@ -607,7 +595,7 @@ display: flex;
 #createMovie #blockAddAFilm form label {
   display: block;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 #createMovie #blockAddAFilm form input[type="text"],
@@ -627,25 +615,22 @@ form textarea {
   resize: none;
 }
 
-#createMovie #blockAddAFilm form input[type="submit"] {
+#createMovie #blockAddAFilm form button {
   display: block;
   background-color: #e80a0a;
   color: var(--textWhite);
   font-size: 1.1rem;
   padding: 8px 32px;
-  margin-top: 24px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-#createMovie #blockAddAFilm form input[type="submit"]:hover {
+#createMovie #blockAddAFilm form button:hover {
   background-color: var(--buttonValid);
 }
 
-
-
-/* ----page modifier un film */
+/* ------------------PAGE MODIFIER UN FILM----------- */
 
 #update {
   display: flex;
@@ -655,6 +640,9 @@ form textarea {
   flex-direction: column;
   padding-bottom: 30px;
 }
+#update h2 {
+  margin-top: 20px;
+}
 
 #update #textBeforeUpdateFilm {
   text-align: center;
@@ -662,7 +650,6 @@ form textarea {
 
 /* Styles pour la carte */
 #update #blocUpdateFilm {
-  background-color: var(--textWhite);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 600px;
@@ -679,7 +666,7 @@ form textarea {
 #update #blocUpdateAFilm form label {
   display: block;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 #blocUpdateAFilm form input[type="text"],
@@ -699,19 +686,18 @@ form textarea {
   resize: none;
 }
 
-#update #blocUpdateAFilm form input[type="submit"] {
+#update #blocUpdateAFilm form button {
   display: block;
   background-color: #e80a0a;
   color: var(--textWhite);
   font-size: 1.1rem;
   padding: 8px 32px;
-  margin-top: 24px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-#update #blocUpdateAFilm form input[type="submit"]:hover {
+#update #blocUpdateAFilm form button:hover {
   background-color: var(--buttonValid);
 }
 
@@ -721,19 +707,16 @@ form textarea {
   max-width: 800px;
   margin: 0 auto;
   padding: 30px;
-  font-size: 1.1rem;
   line-height: 1.5rem;
   text-align: justify;
 }
 
 #blocMention h2 {
-  font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
 #blocMention h3 {
-  font-size: 1.5rem;
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -752,13 +735,12 @@ form textarea {
   color: var(--hoverLien);
 }
 
-/* --------------------page RGPD--------------------------- */
+/* --------------------PAGE RGPD--------------------------- */
 
 #blocRGPD {
   max-width: 800px;
   margin: 0 auto;
   padding: 30px;
-  font-size: 1.1rem;
   line-height: 1.5;
   text-align: justify;
 }
@@ -793,7 +775,7 @@ form textarea {
   text-decoration: underline;
 }
 
-/* --------------------page inscription------------------- */
+/* --------------------PAGE INSCRIPTION------------------- */
 
 /* Couleur de fond du conteneur principal */
 #pageInscription {
@@ -873,7 +855,7 @@ input[type="password"] {
 /* Button inscription */
 #pageInscription button[type="submit"] {
   background-color: var(--hoverLien);
-  color: #fff;
+  color: var(--textWhite);
   font-size: 1rem;
   font-family: var(--buttonFamily);
   font-weight: bold;
@@ -908,7 +890,7 @@ input[type="password"] {
   }
 }
 
-/* ------------------Page connexion----------------------------- */
+/* ------------------PAGE CONNEXION----------------------------- */
 #pageConnection {
   background-color: var(--backgroundPage);
 }
@@ -933,7 +915,7 @@ input[type="password"] {
 /* Titre du formulaire */
 #titreConnection {
   margin-top: 10px;
-  color: white;
+  color: var(--textWhite);
   text-align: center;
   padding-bottom: 20px;
 }
@@ -946,7 +928,7 @@ input[type="password"] {
 
 #pageConnectionlabel a {
   text-transform: uppercase;
-  color: red;
+  color: var(--buttonRed);
 }
 
 #pageConnection label a:hover {
@@ -984,7 +966,7 @@ input[type="password"] {
 /* Button inscription */
 #pageConnection button[type="submit"] {
   background-color: var(--hoverLien);
-  color: #fff;
+  color: var(--textWhite);
   font-size: 1rem;
   font-family: var(--buttonFamily);
   font-weight: bold;
@@ -1017,7 +999,7 @@ input[type="password"] {
   }
 }
 
-/* ---------------------------page contact---------------------------- */
+/* ---------------------------PAGE CONTACT---------------------------- */
 #pageContact {
   background-color: var(--backgroundPage);
   padding-top: 20px;
@@ -1032,7 +1014,7 @@ input[type="password"] {
 
 #pageContact p {
   font-size: 1.3rem;
-  color: white;
+  color: var(--textWhite);
   margin-bottom: 20px;
   line-height: 1.4;
   text-align: center;
@@ -1075,7 +1057,7 @@ input[type="password"] {
 
 /* Titre du formulaire */
 h2#titleContact {
-  color: white;
+  color: var(--textWhite);
   text-align: center;
   margin-bottom: 30px;
 }
@@ -1106,7 +1088,7 @@ textarea {
 /* Button envoi */
 #pageContact button[type="submit"] {
   background-color: var(--hoverLien);
-  color: #fff;
+  color: var(--textWhite);
   font-size: 1rem;
   font-family: var(--buttonFamily);
   font-weight: bold;
@@ -1139,7 +1121,6 @@ textarea {
   width: 100%;
   object-fit: cover;
   height: 150px;
-  
 }
 
 /* titre des films de la liste  */
@@ -1156,10 +1137,7 @@ textarea {
   color: #555;
   overflow: hidden;
   margin-bottom: 10px;
-  width: 100%;
 }
-
-
 
 /* bloc des cards */
 #listMovie .movieCardList {
@@ -1172,6 +1150,10 @@ textarea {
   flex-direction: column;
   background-color: var(--textWhite);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+/* masquer une partie de la description */
+#listMovie .fullDescription {
+  display: none;
 }
 #listMovie .movieCardList a {
   text-decoration: none;
@@ -1205,7 +1187,6 @@ textarea {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
- 
 }
 
 /* hover du bouton */
@@ -1316,7 +1297,7 @@ textarea {
   font-size: 0.9rem;
   border: none;
   background-color: var(--buttonRed);
-  color: #f8f9fa;
+  color: var(--textWhite);
   border-radius: 10px;
 }
 #listMovie .buttonAdmin form .buttonDelete:hover {
@@ -1324,7 +1305,7 @@ textarea {
   background-color: var(--hoverLien);
 }
 
-/* page details d'un film */
+/* -----------------PAGE DETAILS D'UN FILM------------- */
 
 #movieDetails {
   background-color: #f8f9fa;
@@ -1332,42 +1313,41 @@ textarea {
   margin: 0 auto;
 }
 
-#movieDetails #movieDetailsContainer {
+#movieDetails .movieDetailsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+/* titre du film */
 
-#movieDetails #movieTitle {
-  font-size: 2rem;
+#movieDetails .movieTitle {
   font-weight: bold;
   color: #9f3838;
-  margin-bottom: 1rem;
+  margin-top: 16px;
 }
+/* bloc image du film */
 
-#movieDetails #movieImageContainer {
-  max-width: 300px;
-  margin: 1rem;
-  box-sizing: border-box;
+#movieDetails .movieImageContainer {
+  max-width: 400px;
+  margin: 16px;
   text-align: center;
 }
+/* image du film */
 
-#movieDetails #movieImage {
+#movieDetails .movieImage {
   width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
 }
-
-#movieDetails #movieDetailsContent {
-  margin: 1rem;
-  box-sizing: border-box;
+/* details du film */
+#movieDetails .movieDetailsContent {
+  margin: 25px;
 }
 
-#movieDetails #movieDetailsContent p {
-  font-size: 1rem;
+#movieDetails .movieDetailsContent p {
   color: #f84d4d;
   margin-bottom: 10px;
   overflow: hidden;
@@ -1375,56 +1355,11 @@ textarea {
   text-align: justify;
 }
 
-#movieDetails #movieDetailsContent p strong {
+#movieDetails .movieDetailsContent p strong {
   color: #2c3e50;
 }
 
-/* Styles pour la section des commentaires */
-#movieDetails #userComments {
-  margin-top: 20px;
-}
-#movieDetails .comment {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-#movieDetails .commentAuthor {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-#movieDetails .commentText {
-  margin: 0;
-}
-
-/* Styles pour le formulaire de soumission des commentaires */
-#movieDetails #submitComment {
-  margin-top: 20px;
-}
-#movieDetails form label {
-  display: block;
-  margin-bottom: 5px;
-}
-#movieDetails form textarea {
-  width: 100%;
-  resize: vertical;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
-}
-#movieDetails form button {
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.full-description {
-  padding: 10px;
-  background-color: #f8f8f8;
-  border-top: 1px solid #ccc;
-  text-align: justify;
-}
-
-/* --------------------------------------------------------------------page error 404----------------------------------------------- */
+/* -------------PAGE ERROR 404------------------- */
 
 #error404 {
   background-color: #f1f1f1;
@@ -1444,8 +1379,7 @@ textarea {
 }
 
 #error404 p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 #error404 a {
@@ -1522,6 +1456,7 @@ footer #footerCopyright {
 --------------------------------------------------HEADER HORROR NOTICE RESPONSIVE---------------------------------------------------------------- */
 
 /* Pour les ecrans entre 200px et 1200px j'active le menu burger  */
+
 @media (min-width: 200px) and (max-width: 1200px) {
   header #navHeader #burger {
     display: initial;
@@ -1635,11 +1570,12 @@ footer #footerCopyright {
   header #navHeader #buttonAuthentification button {
     margin: 10px;
   }
+
   /* diminuer taille de des polices pour le responsiv */
-  #about h3 {
+  .about h3 {
     font-size: 1rem;
   }
-  #about p {
+  .about p {
     text-align: center;
   }
   p {
@@ -1687,6 +1623,8 @@ footer #footerCopyright {
   }
 }
 
+/* pour les tablettes */
+
 @media (min-width: 769px) and (max-width: 1200px) {
   /* -----------------page home--------------------- */
   #home #mainTitreImg h1 {
@@ -1715,13 +1653,9 @@ footer #footerCopyright {
     flex-direction: column;
   }
 
-  /* ----page home---- */
+  /* fleche pour retourner a la liste des films (PAGE A PROPOS)*/
 
-  /* ---page favoris---- */
-
-  /* fleche pour retourner a la liste des films */
-
-  #backList {
+  .about #backList {
     position: static;
     display: block;
     width: 100%;
@@ -1729,8 +1663,7 @@ footer #footerCopyright {
     margin: 0px;
     text-transform: uppercase;
   }
-
-  /* -------------------------------------page list.php----------------------------------- */
+  /* page listr de film */
 
   /* bloc list film */
 
@@ -1756,7 +1689,7 @@ footer #footerCopyright {
   max-width: 80%;
 }
 
-/* pour les écrans jusqu'à 768px (tablettes) */
+/* pour les écrans jusqu'à 768px (tablettes) et mobile */
 
 @media (max-width: 768px) {
   /* HEADER */
@@ -1832,43 +1765,6 @@ footer #footerCopyright {
     justify-content: center;
   }
 
-  footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  footer #logoFooter #imgLogoFooter {
-    margin: 20px auto;
-    display: flex;
-  }
-  footer #blocFooter {
-    display: block;
-    margin: 0 auto;
-    align-items: center;
-  }
-
-  footer #footerLinks {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    flex-direction: column;
-    align-self: center;
-  }
-
-  footer #footerLinks a {
-    margin: 0 auto;
-    display: flex;
-    padding: 15px;
-  }
-
-  footer #footerCopyright {
-    font-size: 0.9rem;
-    margin-top: 10px;
-  }
-
   /* page inscription */
 
   /* formulaire inscription */
@@ -1926,6 +1822,45 @@ footer #footerCopyright {
     width: 300px;
     height: auto;
   }
+
+  /* footer */
+
+  footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer #logoFooter #imgLogoFooter {
+    margin: 20px auto;
+    display: flex;
+  }
+  footer #blocFooter {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  footer #footerLinks {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  footer #footerLinks a {
+    margin: 0 auto;
+    display: flex;
+    padding: 15px;
+  }
+
+  footer #footerCopyright {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
 }
 
 /*  pour les écrans jusqu'à 480px (petits téléphones) */
@@ -1950,15 +1885,13 @@ footer #footerCopyright {
   /* ----a propos---- */
 
   /* taille de l'image de chucky */
-  #about img {
+  .about img {
     max-width: 100%;
   }
   /* fleche pour retourner a la liste des films */
-  #backList {
+  .about #backList {
     font-size: 0.8rem;
   }
-
-  /* fleche pour retourner a la liste des films */
 
   /* page inscription */
 
@@ -1967,6 +1900,7 @@ footer #footerCopyright {
   #pageInscription form {
     max-width: 280px;
   }
+  /* page connexion */
 
   #pageConnection form {
     max-width: 280px;
@@ -1977,6 +1911,7 @@ footer #footerCopyright {
   #pageContact form {
     max-width: 300px;
   }
+
   /* FOOTER */
   footer #logoFooter #imgLogoFooter {
     margin-bottom: 10px;

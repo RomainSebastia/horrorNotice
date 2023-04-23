@@ -1,5 +1,5 @@
-<?php include("app/views/layouts/head.php") ?>
-<?php include("app/views/layouts/header.php") ?>
+<?php include("app/views/layouts/head.php"); ?>
+<?php include("app/views/layouts/header.php"); ?>
 
 <main id="home">
     <div id="mainTitreImg">
@@ -14,17 +14,18 @@
     <section class="movieCardsHome">
         <?php foreach ($lastMovies as $movie) : ?>
             <article class="movieCardHome">
-                <a href="/horrorNotice/index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
-                    <figure class="movieCardImgHome">
+                <a href="index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
+                    <div class="movieCardImgHome">
                         <img src="<?= htmlspecialchars($movie['image_url']) ?>" alt="<?= htmlspecialchars($movie['title'] . ' - affiche du film') ?>">
-                    </figure>
+                    </div>
                     <div class="movieCardContent">
                         <h3><?= htmlspecialchars($movie['title']) ?></h3>
                         <p><strong>Date de sortie:</strong> <time><?= htmlspecialchars($movie['release_date']) ?></time></p>
                         <p><strong>Durée:</strong> <time><?= htmlspecialchars($movie['duration']) ?></time></p>
-                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
-
-                        <button class="buttonMovie">Voir plus</button>
+                        <p><strong>Description:</strong> <span><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
+                        <div class="buttonHome">
+                            <button type="button" class="buttonMovie">Voir plus</button>
+                        </div>
                     </div>
                 </a>
             </article>
@@ -38,32 +39,21 @@
     <section class="movieCardsHome">
         <?php foreach ($likedMovies as $movie) : ?>
             <article class="movieCardHome">
-                <a href="/horrorNotice/index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
-                    <figure class="movieCardImgHome">
+                <a href="index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
+                    <div class="movieCardImgHome">
                         <img src="<?= htmlspecialchars($movie['image_url']) ?>" alt="<?= htmlspecialchars($movie['title'] . ' - affiche du film') ?>">
-                    </figure>
+                    </div>
                     <div class="movieCardContent">
                         <h3><?= htmlspecialchars($movie['title']) ?></h3>
                         <p><strong>Date de sortie:</strong> <time><?= htmlspecialchars($movie['release_date']) ?></time></p>
                         <p><strong>Durée:</strong> <time><?= htmlspecialchars($movie['duration']) ?></time></p>
-                        <p><strong>Description:</strong> <span id="short-description"><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
+                        <p><strong>Description:</strong> <span><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
 
-                        <button class="buttonMovie">Voir plus</button>
+                        <button type="button" class="buttonMovie">Voir plus</button>
                     </div>
                 </a>
             </article>
         <?php endforeach; ?>
     </section>
-
-
-
-
-
-
 </main>
-
-
-
-
-
 <?php include("app/views/layouts/footer.php"); ?>

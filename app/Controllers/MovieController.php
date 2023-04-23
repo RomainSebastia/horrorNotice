@@ -2,16 +2,20 @@
 
 namespace Movie\Controllers;
 
+use Movie\Controllers\LikeController;
+
 use Movie\Models\Movie;
 
 class MovieController
 {
+    private $likeController;
     private $movieModel;
 
     //  instancie le models Movie
 
     public function __construct()
     {
+        $this->likeController = new LikeController();
         $this->movieModel = new Movie();
     }
 
@@ -25,7 +29,7 @@ class MovieController
         $genre = $data['genre'];
         $duration = filter_var($data['duration'], FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
         $description = $data['description'];
-        
+
 
         // si c'est vide
         if (empty($title)) {
@@ -66,7 +70,7 @@ class MovieController
     // Méthode private pour gérer le téléchargement de l'image
     private function imageDownloadMovie($file)
     {
-        
+
         $allowedExtensions = ['jpg', 'jpeg', 'png'];
         $temporaryFileName = $file['tmp_name'];
         $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
@@ -105,6 +109,25 @@ class MovieController
         return $movies;
     }
 
+    // savoir quelle film a était liké par un utilisateur si il est connecté
+    private function manageMovieLiked($movies)
+    {
+        if (isset($_SESSION['user'])) {
+            $user_id = $_SESSION['user']['id'];
+
+            // Pour chaque film, on vérifie si l'utilisateur a aimé le film
+            foreach ($movies as &$movie) {
+                $movie_id = $movie['id'];
+                $like = $this->likeController->read($user_id, $movie_id);
+                $movie['like_by_user'] = !empty($like);
+            }
+
+            return $movies;
+        } else {
+            return $movies;
+        }
+    }
+
 
 
 
@@ -122,11 +145,11 @@ class MovieController
             return $errors;
         }
 
-        if(isset($image_url['error'])) {
+        if (isset($image_url['error'])) {
             // retourne une erreur
             return $image_url;
         }
-        
+
         if (empty($errors)) {
             $this->movieModel->create(
                 $validatedFormMovie['title'],
@@ -211,8 +234,10 @@ class MovieController
     {
         $moviesGet = $this->movieModel->readAllMovie();
         // recuperer la functions pour le format de durée
-        $movies = $this->formatDuration($moviesGet);
-        
+        $moviesWithDuration = $this->formatDuration($moviesGet);
+
+        $movies = $this->manageMovieLiked($moviesWithDuration);
+
         return $movies;
     }
 
