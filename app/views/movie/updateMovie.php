@@ -8,7 +8,7 @@
     <section id="blocUpdateAFilm">
 
         <form action="index.php?action=updateMovie" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
+            <input type="hidden" name="movie_id" value="<?= $movie['id']?>">
 
             <label for="title">Titre</label>
             <input type="text" name="title" id="title" value="<?= $movie['title'] ?>" required>

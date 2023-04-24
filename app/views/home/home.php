@@ -8,7 +8,7 @@
         <img src="public/images/scream.png" alt="scream">
     </div>
 
-    <h2>Nos 3 derniers films ajouté</h2>
+    <h2>Nos 3 derniers films ajoutés</h2>
     <!-- affichage des 3 derniers films -->
 
     <section class="movieCardsHome">

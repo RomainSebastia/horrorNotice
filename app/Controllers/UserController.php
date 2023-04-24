@@ -32,7 +32,9 @@ class UserController
         // Vérification de l'email
         if (empty($email)) {
             $errors[] = 'L\'email est obligatoire.';
-        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        }
+        // sinon si le champs est rempli et que c'est pas le bon format une erreur s'affiche
+        else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'L\'email est invalide.';
         } else if ($this->auth->emailExists($email)) {
             $errors[] = 'Cet email est déjà utilisé.';
@@ -97,7 +99,7 @@ class UserController
             $name = htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8');
             $email = htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8');
             $password = htmlspecialchars($_POST['password'] ?? '', ENT_QUOTES, 'UTF-8');
-            
+
 
             // Validation des données
             $errors = $this->validateInputRegister($name, $email, $password);
@@ -129,7 +131,7 @@ class UserController
         // Vérification de l'email
         if (empty($email)) {
             $errors[] = 'L\'email est obligatoire.';
-        } 
+        }
         // sinon si le champs est rempli et que c'est pas le bon format une erreur s'affiche
         elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'L\'email est invalide.';
@@ -198,7 +200,7 @@ class UserController
         $newName = htmlspecialchars($newName, ENT_QUOTES, 'UTF-8');
         $newEmail = htmlspecialchars($newEmail, ENT_QUOTES, 'UTF-8');
         $newPassword = htmlspecialchars($newPassword, ENT_QUOTES, 'UTF-8');
-        
+
 
         if ($fileUser !== null) {
             $newProfilePicture = $this->imageDownloadUsers($fileUser);

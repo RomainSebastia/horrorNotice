@@ -29,7 +29,7 @@ class MovieController
         $duration = filter_var(htmlspecialchars($data['duration']), FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
         $description = htmlspecialchars($data['description'], ENT_QUOTES, 'UTF-8');
 
-        // si c'est vide
+        // si c'est vide ou null
         if (empty($title)) {
             $errors[] = "Le titre est requis.";
         }
