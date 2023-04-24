@@ -3,7 +3,7 @@
 
 
 <!-- afficher les films aimés par l'utilisateur -->
-<main id="favoris">
+<main class="favoris">
     <h2>Films aimés de <?= $username ?> </h2>
     <section class="movieCardsHome">
         <?php foreach ($likedMovies as $movie) : ?>

@@ -1,5 +1,5 @@
-<?php include "app/views/layouts/head.php"; ?>
-<?php include "app/views/layouts/header.php"; ?>
+<?php require_once ("app/views/layouts/head.php"); ?>
+<?php include_once ("app/views/layouts/header.php"); ?>
 
 <main id="pageInscription">
     <!-- Section contenant le formulaire d'inscription -->
@@ -27,7 +27,7 @@
             <!-- Checkbox pour accepter le RGPD -->
             <div>
                 <label>
-                    <input type="checkbox" name="rgpd" id="rgpd" value="rgpd">
+                    <input type="checkbox" name="rgpd" class="rgpd" value="rgpd">
                     En créant votre compte, vous acceptez l'intégralité de notre <a href="index.php?action=rgpd">Rgpd</a>.
                 </label>
             </div>

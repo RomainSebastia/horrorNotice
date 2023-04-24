@@ -58,6 +58,7 @@ class UserController
 
         $allowedExtensionsUsers = ['jpg', 'jpeg', 'png'];
         $temporyFileNameUsers = $fileUsers['tmp_name'];
+        //  récupérer des informations sur le chemin d'un fichier
         $extensionUsers = pathinfo($fileUsers['name'], PATHINFO_EXTENSION);
 
         if ($fileUsers['error'] === UPLOAD_ERR_OK && in_array($extensionUsers, $allowedExtensionsUsers)) {

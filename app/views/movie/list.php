@@ -1,7 +1,7 @@
 <?php require_once "app/views/layouts/head.php"; ?>
 <?php include_once "app/views/layouts/header.php"; ?>
 
-<main id="listMovie">
+<main class="listMovie">
     <h2>Nos Films</h2>
     <!-- liste des films affiché -->
     

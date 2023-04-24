@@ -60,7 +60,6 @@ h4 {
 
 h2 {
   font-size: 1.5rem;
-  
 }
 h3 {
   font-size: 1.4rem;
@@ -239,14 +238,14 @@ header #navHeader #close {
 /* Fin du Header */
 
 /* ---------------PAGE HOME-------------------- */
-#home #mainTitreImg h1 {
+.home .mainTitreImg h1 {
   font-size: 2rem;
   color: var(--textBlack);
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   padding: 20px;
 }
 /* bloc du h1 et de l'image */
-#home #mainTitreImg {
+.home .mainTitreImg {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -254,40 +253,39 @@ header #navHeader #close {
 }
 
 /* taille image home */
-#home #mainTitreImg img {
+.home .mainTitreImg img {
   width: 50px;
   height: 50px;
   margin-bottom: auto;
 }
 
-#home h2 {
+.home h2 {
   text-align: center;
   padding: 30px;
 }
 
 /* bloc home film */
-#home .movieCardsHome {
+.home .movieCardsHome {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 /* images des cards des 3 derniers film ajouté */
-#home .movieCardImgHome img {
+.home .movieCardImgHome img {
   width: 100%;
   object-fit: cover;
   height: 150px;
 }
 
 /* titre des films des 3 derniers film ajouté  */
-#home h3 {
+.home h3 {
   color: var(--textBlack);
   margin-left: 10px;
   margin-top: 10px;
   text-transform: uppercase;
-  font-size: 1.5rem;
 }
 /* paragraphe des movie  */
-#home .movieCardHome p {
+.home .movieCardHome p {
   margin: 10px;
   color: #555;
   overflow: hidden;
@@ -295,7 +293,7 @@ header #navHeader #close {
 }
 
 /* bloc des cards */
-#home .movieCardHome {
+.home .movieCardHome {
   width: 30%;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -307,24 +305,24 @@ header #navHeader #close {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-#home .movieCardHome a {
+.home .movieCardHome a {
   text-decoration: none;
 }
 
 /* hover de la cards */
-#home .movieCardHome:hover {
+.home .movieCardHome:hover {
   transform: translateY(-5px);
   transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 /* masquer une partie de la description */
 
-#home .fullDescription {
+.home .fullDescription {
   display: none;
 }
 
 /* button qui dirige vers la page details d'un film */
-#home .buttonMovie {
+.home .buttonMovie {
   background-color: var(--buttonGreen);
   border: none;
   color: var(--textWhite);
@@ -337,7 +335,7 @@ header #navHeader #close {
   display: inline-block;
 }
 /* hover du bouton */
-#home .buttonMovie:hover {
+.home .buttonMovie:hover {
   background-color: var(--buttonGreen);
 }
 
@@ -350,7 +348,6 @@ header #navHeader #close {
 }
 
 .about h2 {
- 
   margin-bottom: 20px;
 }
 
@@ -389,7 +386,6 @@ header #navHeader #close {
   height: auto;
 }
 
-
 /* -------------------------------------PAGE PROFIL------------------------------------------------------ */
 
 #profil {
@@ -410,7 +406,7 @@ header #navHeader #close {
   width: 100%;
 }
 
-#profil #nameTitle {
+#profil .nameTitle {
   margin-bottom: 20px;
 }
 
@@ -465,33 +461,33 @@ header #navHeader #close {
 
 /*------------PAGE FAVORIS------------------------ */
 
-#favoris h2 {
+.favoris h2 {
   text-align: center;
   margin-top: 20px;
 }
 
 /* section favoris */
-#favoris .movieCardsHome {
+.favoris .movieCardsHome {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 /* images des cards des films aimés */
-#favoris .movieCardImgHome img {
+.favoris .movieCardImgHome img {
   width: 100%;
   height: 150px;
   object-fit: cover;
 }
 
 /* titre des films aimés  */
-#favoris h3 {
+.favoris h3 {
   color: var(--textBlack);
   text-align: center;
   text-transform: uppercase;
 }
 /* paragraphe des films des favoris  */
-#favoris .movieCardHome p {
+.favoris .movieCardHome p {
   margin: 10px;
   color: #555;
   overflow: hidden;
@@ -499,7 +495,7 @@ header #navHeader #close {
 }
 
 /* bloc des cards */
-#favoris .movieCardHome {
+.favoris .movieCardHome {
   width: 28%;
   margin: 30px auto;
   border: 1px solid #ccc;
@@ -510,27 +506,27 @@ header #navHeader #close {
   background-color: var(--textWhite);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-#favoris .movieCardHome a {
+.favoris .movieCardHome a {
   text-decoration: none;
 }
-#favoris h2 {
+.favoris h2 {
   color: var(--textBlack);
 }
 
 /* hover de la cards */
-#favoris .movieCardHome:hover {
+.favoris .movieCardHome:hover {
   transform: translateY(-5px);
   transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* masquer une partie de la description */
-#favoris .fullDescription {
+.favoris .fullDescription {
   display: none;
 }
 
 /* button qui dirige vers la page details d'un films */
-#favoris .buttonMovie {
+.favoris .buttonMovie {
   background-color: var(--buttonGreen);
   border: none;
   color: var(--textWhite);
@@ -545,7 +541,7 @@ header #navHeader #close {
   font-size: 0.9rem;
 }
 /* hover du bouton */
-#favoris .buttonMovie:hover {
+.favoris .buttonMovie:hover {
   background-color: var(--buttonGreen);
 }
 
@@ -1104,26 +1100,26 @@ textarea {
 }
 
 /* -----------------------PAGE LISTE DE FILMS.php------------------------------ */
-#listMovie h2 {
+.listMovie h2 {
   text-align: center;
   margin-top: 20px;
 }
 /* section list */
-#listMovie .movieCardsList {
+.listMovie .movieCardsList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 /* images des cards de la liste */
-#listMovie .movieCardList img {
+.listMovie .movieCardList img {
   width: 100%;
   object-fit: cover;
   height: 150px;
 }
 
 /* titre des films de la liste  */
-#listMovie h3 {
+.listMovie h3 {
   color: var(--textBlack);
   text-align: center;
   text-transform: uppercase;
@@ -1131,7 +1127,7 @@ textarea {
 }
 /* paragraphe des films dans la liste */
 
-#listMovie .movieCardList p {
+.listMovie .movieCardList p {
   margin: 10px;
   color: #555;
   overflow: hidden;
@@ -1139,7 +1135,7 @@ textarea {
 }
 
 /* bloc des cards */
-#listMovie .movieCardList {
+.listMovie .movieCardList {
   width: 30%;
   margin: 30px auto;
   border: 1px solid #ccc;
@@ -1151,15 +1147,15 @@ textarea {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 /* masquer une partie de la description */
-#listMovie .fullDescription {
+.listMovie .fullDescription {
   display: none;
 }
-#listMovie .movieCardList a {
+.listMovie .movieCardList a {
   text-decoration: none;
 }
 
 /* hover de la cards */
-#listMovie .movieCardList:hover {
+.listMovie .movieCardList:hover {
   transform: translateY(-5px);
   transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -1167,7 +1163,7 @@ textarea {
 
 /* flexbox pour gerer les boutons  */
 
-#listMovie .listButtonLike {
+.listMovie .listButtonLike {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -1175,7 +1171,7 @@ textarea {
 }
 
 /* button qui dirige vers la page details d'un films */
-#listMovie .listButtonLike .buttonDescriptionMovie {
+.listMovie .listButtonLike .buttonDescriptionMovie {
   background-color: var(--buttonGreen);
   border: none;
   color: var(--textWhite);
@@ -1189,12 +1185,12 @@ textarea {
 }
 
 /* hover du bouton */
-#listMovie .listButtonLike .buttonDescriptionMovie:hover {
+.listMovie .listButtonLike .buttonDescriptionMovie:hover {
   background-color: var(--hoverGreen);
 }
 
 /* bouton like */
-#listMovie .listButtonLike form .buttonLike {
+.listMovie .listButtonLike form .buttonLike {
   padding: 10px;
   text-align: center;
   text-decoration: none;
@@ -1215,7 +1211,7 @@ textarea {
   -o-transition: 0.2s;
 }
 
-#listMovie .listButtonLike form .buttonLike:hover {
+.listMovie .listButtonLike form .buttonLike:hover {
   cursor: pointer;
   background-color: var(--buttonGreen);
   transform: scale(1.2);
@@ -1227,7 +1223,7 @@ textarea {
 
 /* bouton dislike */
 
-#listMovie .listButtonLike form .buttonDislike {
+.listMovie .listButtonLike form .buttonDislike {
   padding: 10px;
   text-align: center;
   text-decoration: none;
@@ -1248,7 +1244,7 @@ textarea {
   -o-transition: 0.2s;
 }
 
-#listMovie .listButtonLike form .buttonDislike:hover {
+.listMovie .listButtonLike form .buttonDislike:hover {
   cursor: pointer;
   background-color: goldenrod;
   transform: scale(1.2);
@@ -1258,7 +1254,7 @@ textarea {
   -o-transform: scale(1.2);
 }
 
-#listMovie .buttonAdmin {
+.listMovie .buttonAdmin {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1284,12 +1280,12 @@ textarea {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-#listMovie .buttonAdmin form .buttonUpdate:hover {
+.listMovie .buttonAdmin form .buttonUpdate:hover {
   cursor: pointer;
   background-color: gray;
 }
 
-#listMovie .buttonAdmin form .buttonDelete {
+.listMovie .buttonAdmin form .buttonDelete {
   padding: 10px;
   text-align: center;
   text-decoration: none;
@@ -1299,20 +1295,20 @@ textarea {
   color: var(--textWhite);
   border-radius: 10px;
 }
-#listMovie .buttonAdmin form .buttonDelete:hover {
+.listMovie .buttonAdmin form .buttonDelete:hover {
   cursor: pointer;
   background-color: var(--hoverLien);
 }
 
 /* -----------------PAGE DETAILS D'UN FILM------------- */
 
-#movieDetails {
+.movieDetails {
   background-color: #f8f9fa;
   padding: 16px;
   margin: 0 auto;
 }
 
-#movieDetails .movieDetailsContainer {
+.movieDetails .movieDetailsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1321,32 +1317,32 @@ textarea {
 }
 /* titre du film */
 
-#movieDetails .movieTitle {
+.movieDetails .movieTitle {
   font-weight: bold;
   color: #9f3838;
   margin-top: 16px;
 }
 /* bloc image du film */
 
-#movieDetails .movieImageContainer {
+.movieDetails .movieImageContainer {
   max-width: 800px;
   margin: 16px;
   text-align: center;
 }
 /* image du film */
 
-#movieDetails .movieImage {
+.movieDetails .movieImage {
   width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
 }
 /* details du film */
-#movieDetails .movieDetailsContent {
+.movieDetails .movieDetailsContent {
   margin: 25px;
 }
 
-#movieDetails .movieDetailsContent p {
+.movieDetails .movieDetailsContent p {
   color: #f84d4d;
   margin-bottom: 10px;
   overflow: hidden;
@@ -1354,7 +1350,7 @@ textarea {
   text-align: justify;
 }
 
-#movieDetails .movieDetailsContent p strong {
+.movieDetails .movieDetailsContent p strong {
   color: #2c3e50;
 }
 
@@ -1457,7 +1453,6 @@ footer #footerCopyright {
 /* Pour les ecrans entre 200px et 1200px j'active le menu burger  */
 
 @media (min-width: 200px) and (max-width: 1200px) {
-
   header #navHeader #burger {
     display: initial;
     font-size: 1.2rem;
@@ -1586,7 +1581,7 @@ footer #footerCopyright {
     font-size: 0.8rem;
   }
 
-  #home #mainTitreImg h1 {
+  .home .mainTitreImg h1 {
     text-shadow: none;
     font-size: 1.2rem;
     text-align: center;
@@ -1604,7 +1599,7 @@ footer #footerCopyright {
     font-size: 0.8rem;
   }
 
-  #favoris h2 {
+  .favoris h2 {
     padding: 0;
   }
 
@@ -1612,7 +1607,7 @@ footer #footerCopyright {
     text-align: center;
   }
 
-  #favoris .buttonMovie {
+  .favoris .buttonMovie {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1629,30 +1624,29 @@ footer #footerCopyright {
 /* pour les tablettes */
 
 @media (min-width: 769px) and (max-width: 1200px) {
-
   /* -----------------PAGE HOME--------------------- */
-  #home #mainTitreImg h1 {
+  .home .mainTitreImg h1 {
     font-size: 1.3rem;
     margin-top: 10px;
   }
-  #home #mainTitreImg img {
+  .home #mainTitreImg img {
     margin-bottom: 10px;
   }
-  #home .movieCardHome {
+  .home .movieCardHome {
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  #listMovie .movieCardList {
+  .listMovie .movieCardList {
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  #listMovie .listButtonLike {
+  .listMovie .listButtonLike {
     display: flex;
     flex-direction: column;
   }
@@ -1667,12 +1661,12 @@ footer #footerCopyright {
     margin: 0px;
     text-transform: uppercase;
   }
-  
+
   /* PAGE LIST DE FILM */
 
   /* bloc list film */
 
-  #titleList {
+  .titleList {
     text-align: center;
     border-bottom: 2px solid #333;
   }
@@ -1690,7 +1684,7 @@ footer #footerCopyright {
 
 /* DETAILS D'UN FILM */
 
-#movieDetails {
+.movieDetails {
   max-width: 80%;
 }
 
@@ -1703,21 +1697,21 @@ footer #footerCopyright {
   }
   /* -----------------------HOME------------------------------ */
 
-  #home #mainTitreImg {
+  .home .mainTitreImg {
     display: flex;
     flex-direction: column;
     padding: 20px;
   }
 
   /* bloc home film */
-  #home .movieCardsHome {
+  .home .movieCardsHome {
     padding: 0;
     margin: auto;
   }
 
   /* PAGE FAVORIS */
 
-  #home .movieCardHome {
+  .home .movieCardHome {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -1726,19 +1720,19 @@ footer #footerCopyright {
 
   /* PAGE LIST */
 
-  #listMovie .movieCardList {
+  .listMovie .movieCardList {
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  #listMovie .listButtonLike {
+  .listMovie .listButtonLike {
     display: flex;
     flex-direction: column;
   }
 
-  #listMovie .buttonAdmin {
+  .listMovie .buttonAdmin {
     display: flex;
     justify-content: space-between;
   }
@@ -1747,7 +1741,7 @@ footer #footerCopyright {
 
   /* /* taille de l'image de chucky */
 
-  #about img {
+  .about img {
     max-width: 70%;
   }
 
@@ -1763,7 +1757,7 @@ footer #footerCopyright {
 
   /* PAGE FAVORI */
 
-  #favoris .movieCardHome {
+  .favoris .movieCardHome {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -1870,7 +1864,6 @@ footer #footerCopyright {
 
 /*  pour les écrans jusqu'à 480px (petits téléphones) */
 @media (max-width: 480px) {
-
   /* HEADER */
   header #logoHeader img {
     height: 50px;
@@ -1878,11 +1871,11 @@ footer #footerCopyright {
   /* ----HOME---- */
 
   /* bloc du h1 et de l'image */
-  #home #mainTitreImg {
+  .home .mainTitreImg {
     padding: 10px;
     margin: 0 auto;
   }
-  #home #mainTitreImg img {
+  .home .mainTitreImg img {
     width: 50px;
     height: 50px;
     margin-top: 10px;
@@ -1891,13 +1884,13 @@ footer #footerCopyright {
   /* ----A PROPOS---- */
 
   /* Sélectionne le dernier élément h3 et le met en display: none */
-.about h3:last-of-type {
-  display: none;
-}
+  .about h3:last-of-type {
+    display: none;
+  }
 
   /* taille de l'image de chucky */
- .about img {
-  display: none;
+  .about img {
+    display: none;
   }
   /* fleche pour retourner a la liste des films */
   .about #backList {

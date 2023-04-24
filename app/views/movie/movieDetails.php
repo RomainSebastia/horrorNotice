@@ -1,7 +1,7 @@
  <?php require_once("app/views/layouts/head.php"); ?>
  <?php include_once("app/views/layouts/header.php"); ?>
 
- <main id="movieDetails">
+ <main class="movieDetails">
      <div class="movieDetailsContainer">
          <h2 class="movieTitle"><?= ($movie['title']) ?></h2>
          <div class="movieImageContainer">

@@ -1,5 +1,5 @@
-<?php include "app/views/layouts/head.php"; ?>
-<?php include "app/views/layouts/header.php"; ?>
+<?php require_once ("app/views/layouts/head.php"); ?>
+<?php include_once ("app/views/layouts/header.php"); ?>
 
 <main id="update">
     <!-- l'admin peut modifier un film si il le souhaite -->
@@ -11,25 +11,25 @@
             <input type="hidden" name="movie_id" value="<?= $movie['id']?>">
 
             <label for="title">Titre</label>
-            <input type="text" name="title" id="title" value="<?= $movie['title'] ?>" required>
+            <input type="text" name="title" class="title" value="<?= $movie['title'] ?>" required>
 
             <label for="release_date">Date de sortie</label>
-            <input type="date" name="release_date" id="release_date" value="<?= $movie['release_date'] ?>" required>
+            <input type="date" name="release_date" class="release_date" value="<?= $movie['release_date'] ?>" required>
 
             <label for="actors_actresses">Acteurs/Actrices</label>
-            <input type="text" name="actors_actresses" id="actors_actresses" value="<?= $movie['actors_actresses'] ?>" required>
+            <input type="text" name="actors_actresses" class="actors_actresses" value="<?= $movie['actors_actresses'] ?>" required>
 
             <label for="genre">Genre</label>
-            <input type="text" name="genre" id="genre" value="<?= $movie['genre'] ?>" required>
+            <input type="text" name="genre" class="genre" value="<?= $movie['genre'] ?>" required>
 
             <label for="duration">Durée</label>
-            <input type="number" name="duration" id="duration" value="<?= $movie['duration'] ?>" required>
+            <input type="number" name="duration" class="duration" value="<?= $movie['duration'] ?>" required>
 
             <label for="image">Affiche du film</label>
-            <input type="file" name="image" id="image" accept="image/*" required>
+            <input type="file" name="image" class="image" accept="image/*" required>
 
             <label for="description">Description du film</label>
-            <textarea id="description" name="description" rows="5" cols="40" required><?= $movie['description'] ?></textarea>
+            <textarea class="description" name="description" rows="5" cols="40" required><?= $movie['description'] ?></textarea>
 
             <button type="submit">Modifier</button>
         </form>
