@@ -1,0 +1,24 @@
+### Interdire l'accès aux fichiers et répertoires sensibles
+# Désactiver l'affichage des listes de répertoires
+
+Options -Indexes
+
+# Activer le module de réécriture d'URL
+RewriteEngine On
+
+# Spécifier le répertoire de base pour les règles de réécriture
+RewriteBase /app/
+
+# Appliquer la règle de réécriture uniquement si l'URL ne correspond pas à un fichier ou un répertoire existant
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Réécrire l'URL pour rediriger vers index.php tout en conservant la chaîne de requête
+RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+# Interdire l'accès aux fichiers .env
+
+<FilesMatch "^.env$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
