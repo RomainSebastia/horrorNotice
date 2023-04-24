@@ -1391,7 +1391,7 @@ textarea {
   color: var(--hoverLien);
 }
 
-/* ------------------Footer------------------------ */
+/* ------------------FOOTER------------------------ */
 
 /* Styles pour le footer */
 footer {
@@ -1457,6 +1457,7 @@ footer #footerCopyright {
 /* Pour les ecrans entre 200px et 1200px j'active le menu burger  */
 
 @media (min-width: 200px) and (max-width: 1200px) {
+
   header #navHeader #burger {
     display: initial;
     font-size: 1.2rem;
@@ -1577,6 +1578,9 @@ footer #footerCopyright {
   .about p {
     text-align: center;
   }
+  .about img {
+    max-width: 500px;
+  }
   p {
     text-align: center;
     font-size: 0.8rem;
@@ -1625,7 +1629,8 @@ footer #footerCopyright {
 /* pour les tablettes */
 
 @media (min-width: 769px) and (max-width: 1200px) {
-  /* -----------------page home--------------------- */
+
+  /* -----------------PAGE HOME--------------------- */
   #home #mainTitreImg h1 {
     font-size: 1.3rem;
     margin-top: 10px;
@@ -1662,7 +1667,8 @@ footer #footerCopyright {
     margin: 0px;
     text-transform: uppercase;
   }
-  /* page listr de film */
+  
+  /* PAGE LIST DE FILM */
 
   /* bloc list film */
 
@@ -1671,7 +1677,7 @@ footer #footerCopyright {
     border-bottom: 2px solid #333;
   }
 
-  /* page contact */
+  /* PAGE CONTACT */
 
   #blocContactParagraph {
     width: 90%;
@@ -1682,7 +1688,7 @@ footer #footerCopyright {
   }
 }
 
-/* page details du film */
+/* DETAILS D'UN FILM */
 
 #movieDetails {
   max-width: 80%;
@@ -1695,7 +1701,7 @@ footer #footerCopyright {
   header #logoHeader #imgLogoHeader {
     height: 60px;
   }
-  /* -----------------------home------------------------------ */
+  /* -----------------------HOME------------------------------ */
 
   #home #mainTitreImg {
     display: flex;
@@ -1709,7 +1715,7 @@ footer #footerCopyright {
     margin: auto;
   }
 
-  /* page favoris */
+  /* PAGE FAVORIS */
 
   #home .movieCardHome {
     width: 60%;
@@ -1718,7 +1724,7 @@ footer #footerCopyright {
     justify-content: center;
   }
 
-  /* page list */
+  /* PAGE LIST */
 
   #listMovie .movieCardList {
     width: 60%;
@@ -1737,7 +1743,7 @@ footer #footerCopyright {
     justify-content: space-between;
   }
 
-  /* -------a propos-------------- */
+  /* -------A PROPOS-------------- */
 
   /* /* taille de l'image de chucky */
 
@@ -1755,7 +1761,7 @@ footer #footerCopyright {
     margin: 0px;
   }
 
-  /* page favoris */
+  /* PAGE FAVORI */
 
   #favoris .movieCardHome {
     width: 60%;
@@ -1764,7 +1770,7 @@ footer #footerCopyright {
     justify-content: center;
   }
 
-  /* page inscription */
+  /* PAGE INSCRIPTION */
 
   /* formulaire inscription */
 
@@ -1778,7 +1784,7 @@ footer #footerCopyright {
     padding: 30px 0 30px 0;
   }
 
-  /* page connexion */
+  /* PAGE CONNEXION */
 
   #pageConnexion form {
     max-width: 350px;
@@ -1788,14 +1794,14 @@ footer #footerCopyright {
     padding: 30px 0 30px 0;
   }
 
-  /* page mentions legals  */
+  /* PAGE MENTIONS LEGALS  */
 
   #blocMention {
     padding: 20px;
     max-width: 90%;
   }
 
-  /* rgpd */
+  /* RGPD */
 
   #blocRGPD {
     max-width: 90%;
@@ -1811,7 +1817,7 @@ footer #footerCopyright {
     text-align: center;
   }
 
-  /* page contact */
+  /* PAGE CONTACT */
 
   #pageContact form {
     max-width: 400px;
@@ -1822,7 +1828,7 @@ footer #footerCopyright {
     height: auto;
   }
 
-  /* footer */
+  /* FOOTER */
 
   footer {
     width: 100%;
@@ -1864,11 +1870,12 @@ footer #footerCopyright {
 
 /*  pour les écrans jusqu'à 480px (petits téléphones) */
 @media (max-width: 480px) {
+
   /* HEADER */
   header #logoHeader img {
     height: 50px;
   }
-  /* ----home---- */
+  /* ----HOME---- */
 
   /* bloc du h1 et de l'image */
   #home #mainTitreImg {
@@ -1881,31 +1888,39 @@ footer #footerCopyright {
     margin-top: 10px;
   }
 
-  /* ----a propos---- */
+  /* ----A PROPOS---- */
+
+  /* Sélectionne le dernier élément h3 et le met en display: none */
+.about h3:last-of-type {
+  display: none;
+}
 
   /* taille de l'image de chucky */
-  .about img {
-    max-width: 100%;
+ .about img {
+  display: none;
   }
   /* fleche pour retourner a la liste des films */
   .about #backList {
     font-size: 0.8rem;
   }
+  .about a {
+    font-size: 0.7rem;
+  }
 
-  /* page inscription */
+  /* PAGE INSCRIPTION */
 
   /* formulaire inscription */
 
   #pageInscription form {
     max-width: 280px;
   }
-  /* page connexion */
+  /* PAGE CONNEXION */
 
   #pageConnection form {
     max-width: 280px;
   }
 
-  /* page contact */
+  /* PAGE CONTACT */
 
   #pageContact form {
     max-width: 300px;
