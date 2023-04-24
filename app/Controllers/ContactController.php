@@ -18,7 +18,7 @@ class ContactController
     {
         $errors = [];
 
-        // Récupérer les données du formulaire et les nettoyer avec htmlspecialchars
+        // Récupérer les données du formulaire
         $name = $_POST['name'] ?? '';
         $email = $_POST['email'] ?? '';
         $surname = $_POST['surname'] ?? '';

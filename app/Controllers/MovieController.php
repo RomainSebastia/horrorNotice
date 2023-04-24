@@ -128,9 +128,6 @@ class MovieController
         }
     }
 
-
-
-
     // Méthode pour créer un film 
     public function createMovie($data, $file)
     {
