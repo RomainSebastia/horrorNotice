@@ -3,7 +3,6 @@
 namespace Movie\Controllers;
 
 use Movie\Controllers\LikeController;
-
 use Movie\Models\Movie;
 
 class MovieController
@@ -23,13 +22,12 @@ class MovieController
     private function validateInputMovie($data)
     {
         $errors = [];
-        $title = $data['title'];
-        $release_date = $data['release_date'];
-        $actors_actresses = $data['actors_actresses'];
-        $genre = $data['genre'];
-        $duration = filter_var($data['duration'], FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
-        $description = $data['description'];
-
+        $title = htmlspecialchars($data['title'], ENT_QUOTES, 'UTF-8');
+        $release_date = htmlspecialchars($data['release_date'], ENT_QUOTES, 'UTF-8');
+        $actors_actresses = htmlspecialchars($data['actors_actresses'], ENT_QUOTES, 'UTF-8');
+        $genre = htmlspecialchars($data['genre'],ENT_QUOTES, 'UTF-8');
+        $duration = filter_var(htmlspecialchars($data['duration']), FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
+        $description = htmlspecialchars($data['description'], ENT_QUOTES, 'UTF-8');
 
         // si c'est vide
         if (empty($title)) {
@@ -173,6 +171,7 @@ class MovieController
     {
         $errors = [];
 
+
         $validatedData = $this->validateInputMovie($data);
         $image_url = $this->imageDownloadMovie($file);
 
@@ -190,14 +189,15 @@ class MovieController
         if (empty($errors)) {
             $this->movieModel->update(
                 $id,
-                $validatedData['title'],
-                $validatedData['release_date'],
-                $validatedData['actors_actresses'],
-                $validatedData['genre'],
-                $validatedData['duration'],
-                $image_url,
-                $validatedData['description']
+                htmlspecialchars($validatedData['title'], ENT_QUOTES, 'UTF-8'),
+                htmlspecialchars($validatedData['release_date'], ENT_QUOTES, 'UTF-8'),
+                htmlspecialchars($validatedData['actors_actresses'], ENT_QUOTES, 'UTF-8'),
+                htmlspecialchars($validatedData['genre'], ENT_QUOTES, 'UTF-8'),
+                filter_var($validatedData['duration'], FILTER_SANITIZE_NUMBER_INT),
+                htmlspecialchars($image_url), ENT_QUOTES, 'UTF-8',
+                htmlspecialchars($validatedData['description'], ENT_QUOTES, 'UTF-8')
             );
+
 
             $_SESSION['message'] = "Le film a été mis à jour avec succès!";
             return true;

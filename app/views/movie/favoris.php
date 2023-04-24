@@ -8,13 +8,13 @@
     <section class="movieCardsHome">
         <?php foreach ($likedMovies as $movie) : ?>
             <article class="movieCardHome">
-                <a href="index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
+                <a href="index.php?action=details&id=<?= ($movie['id']) ?>">
               
                 <div class="movieCardImgHome">
-                    <img src="<?= htmlspecialchars($movie['image_url']) ?>" alt="<?= htmlspecialchars($movie['title'] . ' - affiche du film') ?>">
+                    <img src="<?= htmlspecialchars($movie['image_url']) ?>" alt="<?= ($movie['title'] . ' - affiche du film') ?>">
                 </div>
                 <h2><?= $movie['title'] ?></h2>
-                <p><strong>Description:</strong> <span><?= htmlspecialchars(substr($movie['description'], 0, 20)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
+                <p><strong>Description:</strong> <span><?= (substr($movie['description'], 0, 20)) ?>...</span><span class="fullDescription"><?= ($movie['description']) ?></span></p>
                 <!-- inclure un lien vers la page de détails du film -->
                 <button class="buttonMovie">Voir plus</button>
                 </a>

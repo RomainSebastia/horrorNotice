@@ -71,6 +71,7 @@ class ViewController
                 $errors[] = $results['message'];
             }
         }
+        
         require('app/views/movie/add.php');
     }
 
@@ -185,6 +186,8 @@ class ViewController
     public function list()
     {
         $pageName = "Liste de nos films";
+
+        
 
         // On récupère tous les films
         $movies = $this->movieController->getAllMovies();

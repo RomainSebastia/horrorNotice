@@ -9,15 +9,15 @@
         <?php foreach ($movies as $movie) : ?>
 
             <article class="movieCardList">
-                <a href="index.php?action=details&id=<?= htmlspecialchars($movie['id']) ?>">
+                <a href="index.php?action=details&id=<?= ($movie['id']) ?>">
                     <div class="movieCardImgList">
-                        <img src="<?= htmlspecialchars($movie['image_url']) ?>" alt="<?= htmlspecialchars($movie['title'] . ' - affiche du film') ?>">
+                        <img src="<?= ($movie['image_url']) ?>" alt="<?= ($movie['title'] . ' - affiche du film') ?>">
                     </div>
                     <div class="movieCardListContent">
-                        <h3><?= htmlspecialchars($movie['title']) ?></h3>
-                        <p><strong>Date de sortie:</strong> <time><?= htmlspecialchars($movie['release_date']) ?></time></p>
-                        <p><strong>Durée:</strong> <time><?= htmlspecialchars($movie['duration']) ?></time></p>
-                        <p><strong>Description:</strong> <span><?= htmlspecialchars(substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= htmlspecialchars($movie['description']) ?></span></p>
+                        <h3><?= ($movie['title']) ?></h3>
+                        <p><strong>Date de sortie:</strong> <time><?= ($movie['release_date']) ?></time></p>
+                        <p><strong>Durée:</strong> <time><?= ($movie['duration']) ?></time></p>
+                        <p><strong>Description:</strong> <span><?= (substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= ($movie['description']) ?></span></p>
 
                         <div class="listButtonLike">
                             <button class="buttonDescriptionMovie">Voir plus</button>
@@ -25,13 +25,13 @@
 
                             <?php if (isset($_SESSION['user']) && !$movie['like_by_user']) : ?>
                                 <form action="index.php?action=likeMovie" method="POST">
-                                    <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
+                                    <input type="hidden" name="movie_id" value="<?= ($movie['id']) ?>">
                                     <button type="submit" name="like" class="buttonLike"><i class="fas fa-thumbs-up"></i></button>
                                 </form>
                                 <!--  vérifie si l'utilisateur est connecté et si le film a été aimé par l'utilisateur -->
                             <?php elseif (isset($_SESSION['user']) && $movie['like_by_user']) : ?>
                                 <form action="index.php?action=dislikeMovie" method="POST">
-                                    <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
+                                    <input type="hidden" name="movie_id" value="<?= ($movie['id']) ?>">
                                     <button type="submit" name="dislike" class="buttonDislike"><i class="fas fa-star"></i></button>
                                 </form>
                             <?php endif; ?>

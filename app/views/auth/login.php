@@ -9,12 +9,12 @@
 
             <div>
                 <label for="email">Email :</label>
-                <input type="email" class="email" name="email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
+                <input type="email" class="email" name="email" required value="<?= ($_POST['email'] ?? '') ?>">
             </div>
             <!-- mot de passe -->
             <div>
                 <label for="password">Mot de passe :</label>
-                <input type="password" class="password" name="password" required value="<?= htmlspecialchars($_POST['password'] ?? '') ?>">
+                <input type="password" class="password" name="password" required>
             </div>
             <!-- vers la page s'inscrire -->
             <div id="pageLogin">

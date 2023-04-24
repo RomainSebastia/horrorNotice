@@ -19,10 +19,12 @@ class ContactController
         $errors = [];
 
         // Récupérer les données du formulaire
-        $name = $_POST['name'] ?? '';
-        $email = $_POST['email'] ?? '';
-        $surname = $_POST['surname'] ?? '';
-        $message = $_POST['message'] ?? '';
+        $name = htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8');
+        $email = htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8');
+        $surname = htmlspecialchars($_POST['surname'] ?? '', ENT_QUOTES, 'UTF-8');
+        $message = htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8');
+
+
 
         // Envoyer le message à la base de données en utilisant la méthode create
         if ($this->contactModel->create($name, $email, $surname, $message)) {

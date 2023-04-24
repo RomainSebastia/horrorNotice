@@ -52,8 +52,8 @@ class UserController
     // Méthode pour gérer le téléchargement de l'image de profil de l'utilisateur
     private function imageDownloadUsers($fileUsers)
     {
-        
-        
+
+
         $allowedExtensionsUsers = ['jpg', 'jpeg', 'png'];
         $temporyFileNameUsers = $fileUsers['tmp_name'];
         $extensionUsers = pathinfo($fileUsers['name'], PATHINFO_EXTENSION);
@@ -87,16 +87,17 @@ class UserController
     // création d'un utilisateurs
     public function createUser()
     {
-     
+
         // Vérification si le formulaire est soumis
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Récupération des données du formulaire
             // Utilisation des opérateurs ?? pour assigner une valeur par défaut si une variable est nulle
 
-            $name = $_POST['name'] ?? '';
-            $email = $_POST['email'] ?? '';
-            $password = $_POST['password'] ?? '';
+            $name = htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8');
+            $email = htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8');
+            $password = htmlspecialchars($_POST['password'] ?? '', ENT_QUOTES, 'UTF-8');
+            
 
             // Validation des données
             $errors = $this->validateInputRegister($name, $email, $password);
@@ -124,11 +125,13 @@ class UserController
     private function validateLogin($email, $password)
     {
 
-           $errors = [];
+        $errors = [];
         // Vérification de l'email
         if (empty($email)) {
             $errors[] = 'L\'email est obligatoire.';
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        } 
+        // sinon si le champs est rempli et que c'est pas le bon format une erreur s'affiche
+        elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'L\'email est invalide.';
         }
 
@@ -142,19 +145,19 @@ class UserController
 
     public function login($errors)
     {
-        
+
         // Vérification si l'utilisateur est déjà connecté
         if ($this->auth->isAuthenticated()) {
             header('Location: index.php?action=home');
         }
         $errors = [];
-        
+
         // Vérification si le formulaire est soumis
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Récupération des données du formulaire
-            $email = $_POST['email'] ?? '';
-            $password = $_POST['password'] ?? '';
+            $email = htmlspecialchars($_POST['email'] ?? '');
+            $password = htmlspecialchars($_POST['password'] ?? '');
 
             // Validation des données
             $errors = $this->validateLogin($email, $password);
@@ -185,39 +188,44 @@ class UserController
 
     // modifier les informations d'un users
 
-   
+
 
     public function updateUserName($id, $newName, $newEmail, $newPassword, $fileUser)
-{
-    // Obtenir l'ID de l'utilisateur actuellement connecté (à adapter en fonction de votre implémentation)
-    $currentUser = $this->auth->getCurrentUser();
-    $newProfilePicture = $currentUser['profile_picture_url'];
+    {
+        // Obtenir l'ID de l'utilisateur actuellement connecté (à adapter en fonction de votre implémentation)
+        $currentUser = $this->auth->getCurrentUser();
+        $newProfilePicture = $currentUser['profile_picture_url'];
+        $newName = htmlspecialchars($newName, ENT_QUOTES, 'UTF-8');
+        $newEmail = htmlspecialchars($newEmail, ENT_QUOTES, 'UTF-8');
+        $newPassword = htmlspecialchars($newPassword, ENT_QUOTES, 'UTF-8');
+        
 
-    if ($fileUser !== null) {
-        $newProfilePicture = $this->imageDownloadUsers($fileUser);
+        if ($fileUser !== null) {
+            $newProfilePicture = $this->imageDownloadUsers($fileUser);
 
-        if (isset($newProfilePicture['error'])) {
-            // retourne une erreur
-            return $newProfilePicture;
+            if (isset($newProfilePicture['error'])) {
+                // retourne une erreur
+                return $newProfilePicture;
+            }
+        }
+
+        // Vérifier si l'utilisateur actuel est autorisé à modifier le compte
+        if ($id === $currentUser['id']) {
+            $this->user->update($id, $newName, $newEmail, $newPassword, $newProfilePicture);
+            $_SESSION['message'] = "Le nom d'utilisateur a été mis à jour avec succès.";
+        } else {
+            // L'utilisateur n'est pas autorisé à modifier ce compte
+            $_SESSION['error'] = "Vous n'êtes pas autorisé à modifier ce compte.";
         }
     }
 
-    // Vérifier si l'utilisateur actuel est autorisé à modifier le compte
-    if ($id === $currentUser['id']) {
-        $this->user->update($id, $newName, $newEmail, $newPassword, $newProfilePicture);
-        $_SESSION['message'] = "Le nom d'utilisateur a été mis à jour avec succès.";
-    } else {
-        // L'utilisateur n'est pas autorisé à modifier ce compte
-        $_SESSION['error'] = "Vous n'êtes pas autorisé à modifier ce compte.";
-    }
-}
 
-    
     // supprimer un users
 
     public function deleteUser()
     {
-        $userId = $_POST['user_id'];
+        $userId = htmlspecialchars($_POST['user_id'], ENT_QUOTES, 'UTF-8');
+
 
         // Supprimer l'utilisateur correspondant à l'ID récupéré
         $result = $this->user->delete($userId);

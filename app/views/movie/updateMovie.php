@@ -8,31 +8,32 @@
     <section id="blocUpdateAFilm">
 
         <form action="index.php?action=updateMovie" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
+            <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
 
             <label for="title">Titre</label>
-            <input type="text" name="title" class="title" value="<?= htmlspecialchars($movie['title']) ?>" required><br>
+            <input type="text" name="title" id="title" value="<?= $movie['title'] ?>" required>
 
             <label for="release_date">Date de sortie</label>
-            <input type="date" name="release_date" class="release_date" value="<?= htmlspecialchars($movie['release_date']) ?>" required><br>
+            <input type="date" name="release_date" id="release_date" value="<?= $movie['release_date'] ?>" required>
 
             <label for="actors_actresses">Acteurs/Actrices</label>
-            <input type="text" name="actors_actresses" class="actors_actresses" value="<?= htmlspecialchars($movie['actors_actresses']) ?>" required><br>
+            <input type="text" name="actors_actresses" id="actors_actresses" value="<?= $movie['actors_actresses'] ?>" required>
 
             <label for="genre">Genre</label>
-            <input type="text" name="genre" class="genre" value="<?= htmlspecialchars($movie['genre']) ?>" required><br>
+            <input type="text" name="genre" id="genre" value="<?= $movie['genre'] ?>" required>
 
             <label for="duration">Durée</label>
-            <input type="number" name="duration" class="duration" value="<?= htmlspecialchars($movie['duration']) ?>" required><br>
+            <input type="number" name="duration" id="duration" value="<?= $movie['duration'] ?>" required>
 
             <label for="image">Affiche du film</label>
-            <input type="file" name="image" class="image" accept="image/*" required><br>
+            <input type="file" name="image" id="image" accept="image/*" required>
 
             <label for="description">Description du film</label>
-            <textarea id="UpdateDescription" name="description" rows="5" cols="40" required><?= htmlspecialchars($movie['description']) ?></textarea>
+            <textarea id="description" name="description" rows="5" cols="40" required><?= $movie['description'] ?></textarea>
 
             <button type="submit">Modifier</button>
         </form>
+
 
     </section>
 </main>

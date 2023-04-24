@@ -12,12 +12,12 @@
             <!-- Champ de saisie du nom -->
             <div>
                 <label for="name">Nom :</label>
-                <input type="text" class="name" name="name" value="<?php echo htmlspecialchars($name ?? ''); ?>" required>
+                <input type="text" class="name" name="name" value="<?php echo ($name ?? ''); ?>" required>
             </div>
             <!-- Champ de saisie de l'email -->
             <div>
                 <label for="email">Email :</label>
-                <input type="email" class="email" name="email" value="<?php echo htmlspecialchars($email ?? ''); ?>" required>
+                <input type="email" class="email" name="email" value="<?php echo ($email ?? ''); ?>" required>
             </div>
             <!-- Champ de saisie du mot de passe -->
             <div>

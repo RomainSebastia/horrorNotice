@@ -18,22 +18,22 @@
       <!-- prenom -->
       <div>
         <label for="prenom">Prénom :</label>
-        <input type="text" class="prenom" name="name" required value="<?= htmlspecialchars($_POST['name'] ?? '') ?>">
+        <input type="text" class="prenom" name="name" required value="<?= ($_POST['name'] ?? '') ?>">
       </div>
       <!-- nom -->
       <div>
         <label for="nom">Nom :</label>
-        <input type="text" class="nom" name="surname" required value="<?= htmlspecialchars($_POST['surname'] ?? '') ?>">
+        <input type="text" class="nom" name="surname" required value="<?= ($_POST['surname'] ?? '') ?>">
       </div>
       <div>
         <!-- adresse e-mail -->
         <label for="email">Adresse e-mail :</label>
-        <input type="email" class="email" name="email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
+        <input type="email" class="email" name="email" required value="<?= ($_POST['email'] ?? '') ?>">
       </div>
       <!-- message -->
       <div>
         <label for="message">Message :</label>
-        <textarea class="message" name="message" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
+        <textarea class="message" name="message" required><?= ($_POST['message'] ?? '') ?></textarea>
       </div>
       <button type="submit">Envoyer</button>
     </form>
