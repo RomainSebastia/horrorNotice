@@ -170,8 +170,8 @@ class ViewController
     // Page des mentions légales
     public function legals()
     {
-        $pageName = "Mentions-Legals";
-        require("app/views/legals/mentionslegales.php");
+        $pageName = "Mentions Legals";
+        require("app/views/legals/legals.php");
     }
 
     // Page RGPD

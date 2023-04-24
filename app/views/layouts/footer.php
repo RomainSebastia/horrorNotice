@@ -9,7 +9,7 @@
         <!-- menu du footer -->
         <div id="footerLinks">
             <a href="index.php?action=rgpd" title="RGPD">RGPD</a>
-            <a href="index.php?action=mentions-legals" title="Legals">Mentions Légales</a>
+            <a href="index.php?action=legals" title="Legals">Mentions Légales</a>
             <a href="index.php?action=about" title="A Propos">À Propos</a>
             <a href="index.php?action=contact" title="Contact">Contact</a>
         </div>

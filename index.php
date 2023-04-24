@@ -30,7 +30,7 @@ try {
             case 'contact':
                 $viewController->contact();
                 break;
-            case 'mentions-legals':
+            case 'legals':
                 $viewController->legals();
                 break;
             case 'rgpd':

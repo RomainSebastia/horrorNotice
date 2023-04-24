@@ -55,10 +55,12 @@ h3,
 h4 {
   text-transform: uppercase;
   font-family: "montserratregular", sans-serif;
+  text-align: center;
 }
 
 h2 {
   font-size: 1.5rem;
+  
 }
 h3 {
   font-size: 1.4rem;
@@ -343,17 +345,16 @@ header #navHeader #close {
 
 .about {
   background-color: var(--backgroundPage);
-  color: #fff;
-  padding: 40px;
+  color: var(--textWhite);
+  padding: 60px;
 }
 
 .about h2 {
-  text-align: center;
+ 
   margin-bottom: 20px;
 }
 
 .about h3 {
-  font-size: 1.4rem;
   font-weight: bold;
   margin-top: 40px;
   margin-bottom: 10px;
@@ -367,14 +368,14 @@ header #navHeader #close {
 }
 
 .about a {
-  color: var(--buttonValid);
+  color: var(--buttonRed);
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1rem;
 }
-
 .about a:hover {
   color: var(--hoverLien);
 }
-
 .about h4 {
   text-align: center;
   font-size: 1.2rem;
@@ -382,17 +383,15 @@ header #navHeader #close {
 /* taille de l'image de chucky */
 .about img {
   object-fit: cover;
-  max-width: 50%;
+  max-width: 40%;
   display: block;
   margin: 20px auto;
   height: auto;
 }
 
 
+/* -------------------------------------PAGE PROFIL------------------------------------------------------ */
 
-/* -------------------------------------PAGE Profil------------------------------------------------------ */
-
-/* Profil */
 #profil {
   width: 100%;
   max-width: 800px;
@@ -1330,7 +1329,7 @@ textarea {
 /* bloc image du film */
 
 #movieDetails .movieImageContainer {
-  max-width: 400px;
+  max-width: 800px;
   margin: 16px;
   text-align: center;
 }
