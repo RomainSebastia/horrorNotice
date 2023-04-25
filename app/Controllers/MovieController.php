@@ -25,7 +25,7 @@ class MovieController
         $title = htmlspecialchars($data['title'], ENT_QUOTES, 'UTF-8');
         $release_date = htmlspecialchars($data['release_date'], ENT_QUOTES, 'UTF-8');
         $actors_actresses = htmlspecialchars($data['actors_actresses'], ENT_QUOTES, 'UTF-8');
-        $genre = htmlspecialchars($data['genre'],ENT_QUOTES, 'UTF-8');
+        $genre = htmlspecialchars($data['genre'], ENT_QUOTES, 'UTF-8');
         $duration = filter_var(htmlspecialchars($data['duration']), FILTER_SANITIZE_NUMBER_INT); // pour s'assurer qu'il s'agit d'un entier
         $description = htmlspecialchars($data['description'], ENT_QUOTES, 'UTF-8');
 
@@ -119,9 +119,7 @@ class MovieController
                 $like = $this->likeController->read($user_id, $movie_id);
                 $movie['like_by_user'] = !empty($like);
             }
-
-            return $movies;
-        } else {
+            //  On retourne les films qu'ils aient été modifiés ou non
             return $movies;
         }
     }
@@ -194,7 +192,7 @@ class MovieController
                 htmlspecialchars($validatedData['actors_actresses'], ENT_QUOTES, 'UTF-8'),
                 htmlspecialchars($validatedData['genre'], ENT_QUOTES, 'UTF-8'),
                 filter_var($validatedData['duration'], FILTER_SANITIZE_NUMBER_INT),
-                htmlspecialchars($image_url), ENT_QUOTES, 'UTF-8',
+                htmlspecialchars($image_url, ENT_QUOTES, 'UTF-8'),
                 htmlspecialchars($validatedData['description'], ENT_QUOTES, 'UTF-8')
             );
 
@@ -230,7 +228,7 @@ class MovieController
     public function getAllMovies()
     {
         $moviesGet = $this->movieModel->readAllMovie();
-        // recuperer la functions pour le format de durée
+        // recuperer la function pour le format de durée
         $moviesWithDuration = $this->formatDuration($moviesGet);
 
         $movies = $this->manageMovieLiked($moviesWithDuration);

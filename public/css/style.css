@@ -677,7 +677,7 @@ form textarea {
 
 /* resize le textarea du formulaire */
 
-#update #updateDescription {
+#update .updateDescription {
   resize: none;
 }
 
@@ -1261,7 +1261,7 @@ textarea {
   width: 100%;
 }
 
-#listMovie .buttonAdmin form .buttonUpdate {
+.listMovie .buttonAdmin form .buttonUpdate {
   padding: 10px;
   text-align: center;
   text-decoration: none;
@@ -1353,6 +1353,7 @@ textarea {
 .movieDetails .movieDetailsContent p strong {
   color: #2c3e50;
 }
+
 
 /* -------------PAGE ERROR 404------------------- */
 

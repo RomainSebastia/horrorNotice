@@ -11,7 +11,7 @@
             <input type="hidden" name="movie_id" value="<?= $movie['id']?>">
 
             <label for="title">Titre</label>
-            <input type="text" name="title" class="title" value="<?= $movie['title'] ?>" required>
+            <input type="text" name="title" class="title" value="<?= $movie['title']?>" required>
 
             <label for="release_date">Date de sortie</label>
             <input type="date" name="release_date" class="release_date" value="<?= $movie['release_date'] ?>" required>

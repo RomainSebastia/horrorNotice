@@ -13,7 +13,7 @@ function BackgroundImage() {
     "conjuring.jpg"
   ];
 
-  // Génère un indice aléatoire entre 0 et la longueur du tableau "backgroundImages" et le stocke dans la variable "randomIndex"
+  // Génère un indice aléatoire entre 0 et la longueur du tableau backgroundImages et le stocke dans la variable "randomIndex"
   const randomIndex = Math.floor(Math.random() * backgroundImages.length);
 
   // Je sélectionne l'image de fond d'écran correspondant à l'indice aléatoire et la stocke dans la variable "randomImage"

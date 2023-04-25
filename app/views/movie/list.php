@@ -17,7 +17,7 @@
                         <h3><?= ($movie['title']) ?></h3>
                         <p><strong>Date de sortie:</strong> <time><?= ($movie['release_date']) ?></time></p>
                         <p><strong>Durée:</strong> <time><?= ($movie['duration']) ?></time></p>
-                        <p><strong>Description:</strong> <span><?= (substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= ($movie['description']) ?></span></p>
+                        <p><strong>Description:</strong><span><?= (substr($movie['description'], 0, 100)) ?>...</span><span class="fullDescription"><?= ($movie['description']) ?></span></p>
 
                         <div class="listButtonLike">
                             <button class="buttonDescriptionMovie">Voir plus</button>
@@ -43,12 +43,12 @@
                             <div class="buttonAdmin">
 
                                 <form action="index.php?action=update" method="POST">
-                                    <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
+                                    <input type="hidden" name="movie_id" value="<?=($movie['id']) ?>">
                                     <button type="submit" class="buttonUpdate">Modifier</button>
                                 </form>
 
                                 <form action="index.php?action=deleteMovie" method="POST">
-                                    <input type="hidden" name="movie_id" value="<?= htmlspecialchars($movie['id']) ?>">
+                                    <input type="hidden" name="movie_id" value="<?= ($movie['id']) ?>">
                                     <button type="submit" class="buttonDelete">Supprimer</button>
                                 </form>
                             </div>
