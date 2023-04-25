@@ -38,12 +38,12 @@
         <div id="buttonAuthentification">
           <!-- si l'utilisateur connecté ou l'admin il ya le bouton deconnexion et mon profil -->
           <?php if (isset($_SESSION['user'])) : ?>
-            <a href="index.php?action=logout"><button id="buttonDeconnect" type="button">Déconnexion</button></a>
-            <a href="index.php?action=profil"><button id="buttonProfile" type="button">Mon profil</button></a>
+            <a href="index.php?action=logout" id="buttonDeconnect">Déconnexion</a>
+            <a href="index.php?action=profil" id="buttonProfile">Mon profil</a>
             <!-- sinon le bouton s'inscrire et se connecter seront affiché -->
           <?php else : ?>
-            <a href="index.php?action=register"><button id="buttonRegistration" type="button">S'inscrire</button></a>
-            <a href="index.php?action=login"><button id="buttonConnect" type="button">Connexion</button></a>
+            <a href="index.php?action=register" id="buttonRegistration">S'inscrire</a>
+            <a href="index.php?action=login" id="buttonConnect">Connexion</a>
           <?php endif; ?>
         </div>
       </div>

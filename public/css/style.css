@@ -133,13 +133,13 @@ header #navHeader #ulMenu li a:hover {
 }
 
 /* marge entre les boutons d'authentification */
-header #navHeader #buttonAuthentification button {
-  margin: 4px;
+header #navHeader #buttonAuthentification  {
+  margin: 0 10px;
 }
 
 /* Style pour le bouton S'inscrire */
-header #navHeader #buttonRegistration,
-header #navHeader #buttonDeconnect {
+header #navHeader a#buttonRegistration ,
+header #navHeader a#buttonDeconnect  {
   background-color: var(--buttonRed);
   color: var(--textWhite);
   font-size: 1rem;
@@ -150,34 +150,19 @@ header #navHeader #buttonDeconnect {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  
 }
 
-header #navHeader #buttonRegistration:hover,
-header #navHeader #buttonDeconnect:hover {
+header #navHeader a#buttonRegistration:hover,
+header #navHeader a#buttonDeconnect:hover {
   background-color: var(--hoverLien);
 }
 
 /* Style pour le bouton Se connecter */
-header #navHeader #buttonConnect {
-  background-color: var(--buttonGreen);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-}
-
-header #navHeader #buttonConnect:hover,
-header #navHeader #buttonProfile:hover {
-  background-color: var(--buttonValid);
-}
-
-/* bouton de profil visible lorsqu'il est connecté */
-header #navHeader #buttonProfile {
+header #navHeader a#buttonConnect  {
   background-color: var(--buttonGreen);
   color: var(--textWhite);
   font-size: 1rem;
@@ -188,6 +173,29 @@ header #navHeader #buttonProfile {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header #navHeader a#buttonConnect:hover,
+header #navHeader a#buttonProfile:hover {
+  background-color: var(--buttonValid);
+}
+
+/* bouton de profil visible lorsqu'il est connecté */
+header #navHeader a#buttonProfile {
+  background-color: var(--buttonGreen);
+  color: var(--textWhite);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* menu burger en display none et le bouton croix egalement  */
@@ -1557,17 +1565,7 @@ footer #footerCopyright {
     text-align: center;
   }
 
-  header #navHeader #buttonAuthentification {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  header #navHeader #buttonAuthentification button {
-    margin: 10px;
-  }
-
-  /* diminuer taille de des polices pour le responsiv */
+ /* diminuer taille de des polices pour le responsiv */
   .about h3 {
     font-size: 1rem;
   }
@@ -1858,7 +1856,6 @@ footer #footerCopyright {
   }
 
   footer #footerCopyright {
-    font-size: 0.9rem;
     margin-top: 10px;
   }
 }
