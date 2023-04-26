@@ -59,14 +59,14 @@ J'avais prévu un système de commentaires entre utilisateurs pour partager leur
 ## capture d'ecran de la page d'accueil version desktop 
 <div align="center">
 <a href="#">
-    <img src="horrorNoticeDesktop" alt="capture home" width = "600px">
+    <img src="horrorNoticeDesktop.png" alt="capture home" width = "600px">
   </a>
   </div
 
   ## capture d'ecran de la page d'accueil version mobile
 <div align="center">
 <a href="#">
-    <img src="horrorNoticeMobile" alt="capture home" width = "600px">
+    <img src="horrorNoticeMobile.png" alt="capture home" width = "600px">
   </a>
   </div
 
