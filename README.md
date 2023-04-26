@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#">
-    <img src="public/images/logo.png" alt="Logo horrorNotice" height="90">
+    <img src="public/images/logo.png" alt="Logo HorrorNotice" height="90">
   </a>
   <h1 align="center">Horror Notice</h1>
   <p align="center">Films d'horreur - Projet Kercode</p>
@@ -13,7 +13,7 @@ Horror Notice est un site dédié aux films d'horreur, destiné aux amateurs de 
 ## Fonctionnalités
 
 - Inscription
-- Modification des informations de compte (photo de profil, nom, adresse email, mot de passe)
+- Modification des informations de compte (photo de profil, nom, adresse e-mail, mot de passe)
 - Suppression de compte
 - Liste de films favoris
 - Système de likes
@@ -38,11 +38,11 @@ Horror Notice est un site dédié aux films d'horreur, destiné aux amateurs de 
 
 Pour installer Horror Notice sur votre ordinateur, vous devez suivre les étapes suivantes :
 
-1. Cloner le repository GitHub en utilisant la commande suivante :
+1. Clonez le dépôt GitHub en utilisant la commande suivante :
 
    git clone https://github.com/RomainSebastia/horrorNotice.git
 
-2. À la racine du projet, sur un éditeur de texte ouvrez votre terminal et tapez la commande suivante :
+2. À la racine du projet, sur un éditeur de texte, ouvrez votre terminal et tapez la commande suivante :
 
    composer install
 
@@ -54,21 +54,22 @@ Pour installer Horror Notice sur votre ordinateur, vous devez suivre les étapes
 
 ## Les améliorations futures
 
-J'avais prévu un système de commentaires entre utilisateurs pour partager leur avis sur les films, mais je n'ai pas eu le temps de le mettre en place faute de temps.
+J'avais prévu un système de commentaires entre utilisateurs pour partager leurs avis sur les films, mais je n'ai pas eu le temps de le mettre en place faute de temps.
 
-## capture d'ecran de la page d'accueil version desktop 
+## Capture d'écran de la page d'accueil version desktop
 <div align="center">
-<a href="#">
-    <img src="horrorNoticeDesktop.png" alt="capture home" width = "600px">
+  <a href="#">
+    <img src="horrorNoticeDesktop.png" alt="capture home" width="600px">
   </a>
-  </div
+</div>
 
-## capture d'ecran de la page d'accueil version mobile
+## Capture d'écran de la page d'accueil version mobile
 <div align="center">
-<a href="#">
-    <img src="horrorNoticeMobile.png" alt="capture home" width = "600px">
+  <a href="#">
+    <img src="horrorNoticeMobile.png" alt="capture mobile" width="600px">
   </a>
-  </div
+</div>
+
 
 
 
