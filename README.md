@@ -63,7 +63,7 @@ J'avais prévu un système de commentaires entre utilisateurs pour partager leur
   </a>
   </div
 
-  ## capture d'ecran de la page d'accueil version mobile
+## capture d'ecran de la page d'accueil version mobile
 <div align="center">
 <a href="#">
     <img src="horrorNoticeMobile.png" alt="capture home" width = "600px">
